@@ -10,17 +10,18 @@ import {
     TimeIcon,
     ViewIcon,
 } from "@chakra-ui/icons";
-import { Box, HStack, Heading, Icon, Image, Link, VStack } from "@chakra-ui/react";
+import { Box, HStack, Heading, Icon, Image, Link, VStack, useStyleConfig } from "@chakra-ui/react";
 
 const Sidebar = () => {
+    const sidebarStyle = useStyleConfig("Sidebar");
+    const headingStyle = useStyleConfig("Heading");
+
     return (
-        <Box as="aside" width="250px" height="100vh" paddingY="4" paddingX="3" bg="gray.100">
+        <Box as="aside" sx={sidebarStyle}>
             <Box marginBottom="6" paddingX="3">
                 <Image src="/ogno.svg" alt="Ogno Logo" />
             </Box>
-            <Heading as="h3" size="md" marginBottom="6">
-                Dashboard
-            </Heading>
+            <Heading sx={headingStyle}>Dashboard</Heading>
             <VStack align="stretch" spacing="3">
                 <Link href="/">
                     <HStack>

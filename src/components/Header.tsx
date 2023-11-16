@@ -1,29 +1,63 @@
 import { BellIcon, ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
 import { Avatar, Box, Button, Flex, IconButton, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
+import FullscreenLoader from "@components/FullscreenLoader";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const Header = () => {
-    const clients = ["Client 1", "Client 2", "Client 3"];
-    const user = { name: "Oktay Shakirov", role: "Admin" };
-    const notificationCount = 5;
+    const [clients, setClients] = useState<{ id: string; name: string }[]>([]);
+    const [user, setUser] = useState({ name: "", role: "" });
+    const [notificationCount, setNotificationCount] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
+
+    const loadData = async () => {
+        const clientsUrl = `${import.meta.env.VITE_BACKEND_URL}/clients.json`;
+        const userUrl = `${import.meta.env.VITE_BACKEND_URL}/users.json`;
+        const notificationsUrl = `${import.meta.env.VITE_BACKEND_URL}/notifications.json`;
+
+        try {
+            const [clientsResponse, userResponse, notificationsResponse] = await Promise.all([
+                axios.get(clientsUrl),
+                axios.get(userUrl),
+                axios.get(notificationsUrl),
+            ]);
+
+            setClients(clientsResponse.data);
+            setUser(userResponse.data);
+            setNotificationCount(notificationsResponse.data.count);
+        } catch (error) {
+            console.error("Error loading data:", error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        loadData();
+    }, []);
+
+    if (isLoading) {
+        return <FullscreenLoader />;
+    }
 
     return (
         <Flex direction="column" bg="gray.100" p="4">
             <Flex justifyContent="space-between" alignItems="center">
-                {/* Clients List */}
+                {/* Left Side: Clients List */}
                 <Menu>
                     <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                         Select Client
                     </MenuButton>
                     <MenuList>
                         {clients.map((client) => (
-                            <MenuItem key={client}>{client}</MenuItem>
+                            <MenuItem key={client.id}>{client.name}</MenuItem>
                         ))}
                     </MenuList>
                 </Menu>
 
                 {/* Right Side: User Info and Notifications */}
                 <Flex alignItems="center">
-                    {/* Avatar and User Info */}
+                    {/* Avatar and User */}
                     <Flex alignItems="center" mr="2">
                         <Avatar name={user.name} mr="1" />
                         <Flex direction="column" alignItems="flex-start" ml="1">
@@ -36,7 +70,7 @@ const Header = () => {
                         </Flex>
                     </Flex>
 
-                    {/* Settings */}
+                    {/* Settings Menu */}
                     <Menu>
                         <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                             <SettingsIcon w={5} h={5} />
@@ -48,7 +82,7 @@ const Header = () => {
                         </MenuList>
                     </Menu>
 
-                    {/* Notification Icon with Badge */}
+                    {/* Notifications */}
                     <IconButton
                         icon={<BellIcon w={6} h={6} />}
                         variant="ghost"

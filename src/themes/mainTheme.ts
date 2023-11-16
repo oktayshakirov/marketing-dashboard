@@ -23,8 +23,27 @@ const mainTheme = extendTheme({
             },
         },
     },
-    components: {},
-
+    components: {
+        Button: {
+            variants: {},
+        },
+        Sidebar: {
+            baseStyle: {
+                width: "250px",
+                height: "100vh",
+                py: "4",
+                px: "3",
+                bg: "gray.100",
+            },
+        },
+        Heading: {
+            baseStyle: {
+                as: "h3",
+                size: "md",
+                marginBottom: "6",
+            },
+        },
+    },
     styles: {
         global: {
             body: {
