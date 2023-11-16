@@ -83,28 +83,24 @@ const Header = () => {
                     </Menu>
 
                     {/* Notifications */}
-                    <IconButton
-                        icon={<BellIcon w={6} h={6} />}
-                        variant="ghost"
-                        aria-label="Notifications"
-                        mr="4"
-                        position="relative"
-                    />
-                    {notificationCount > 0 && (
-                        <Box
-                            position="absolute"
-                            top="5"
-                            right="9"
-                            px={1}
-                            fontSize="xs"
-                            fontWeight="bold"
-                            color="white"
-                            bg="red.500"
-                            borderRadius="full"
-                        >
-                            {notificationCount}
-                        </Box>
-                    )}
+                    <Flex position="relative" alignItems="center" mr="4">
+                        <IconButton icon={<BellIcon w={6} h={6} />} variant="ghost" aria-label="Notifications" />
+                        {notificationCount > 0 && (
+                            <Box
+                                position="absolute"
+                                top="-1"
+                                right="1"
+                                px={1}
+                                fontSize="xs"
+                                fontWeight="bold"
+                                color="white"
+                                bg="red.500"
+                                borderRadius="full"
+                            >
+                                {notificationCount}
+                            </Box>
+                        )}
+                    </Flex>
                 </Flex>
             </Flex>
         </Flex>
