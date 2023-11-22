@@ -41,7 +41,7 @@ const Header = () => {
     }
 
     return (
-        <Flex direction="column" bg="gray.100" p="4">
+        <Flex direction="column" bg="linear-gradient(to left, #A1FFCE, #86fde8)" p="4">
             <Flex justifyContent="space-between" alignItems="center">
                 {/* Left Side: Clients List */}
                 <Menu>
