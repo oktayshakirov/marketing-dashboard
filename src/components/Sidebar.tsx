@@ -24,10 +24,11 @@ const Sidebar = () => {
 
     const SidebarLink = ({ icon, children, to }: SidebarLinkProps) => {
         const isActive = location.pathname === to;
-        const activeBg = useColorModeValue("gray.200", "gray.700");
+        const activeBg = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(255, 255, 255, 0.3)");
         const inactiveBg = useColorModeValue("transparent", "transparent");
         const activeColor = useColorModeValue("blue.500", "blue.300");
         const inactiveColor = useColorModeValue("gray.600", "gray.400");
+        const hoverBg = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.4)");
 
         return (
             <NavLink to={to}>
@@ -37,8 +38,13 @@ const Sidebar = () => {
                     bg={isActive ? activeBg : inactiveBg}
                     color={isActive ? activeColor : inactiveColor}
                     w="100%"
+                    padding="20px"
+                    borderRadius="10px"
+                    boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+                    backdropFilter="blur(10px)"
                     _hover={{
-                        bg: isActive ? activeBg : inactiveBg,
+                        bg: hoverBg,
+                        boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
                     }}
                     _active={{
                         bg: activeBg,
@@ -47,7 +53,7 @@ const Sidebar = () => {
                     _focus={{
                         boxShadow: "none",
                     }}
-                    leftIcon={<Icon as={icon} />}
+                    leftIcon={<Icon as={icon} boxSize="20px" />}
                 >
                     {children}
                 </Button>
@@ -56,7 +62,7 @@ const Sidebar = () => {
     };
 
     return (
-        <Box as="aside" width="250px" height="100vh" py="4" px="3" bg="linear-gradient(to right, #A1FFCE, #86fde8)">
+        <Box as="aside" width="200px" height="100vh" py="4" px="3" bg="linear-gradient(to right, #A1FFCE, #86fde8)">
             <Box marginBottom="6" paddingX="3">
                 <Image src="/ogno.svg" alt="Ogno Logo" />
             </Box>
