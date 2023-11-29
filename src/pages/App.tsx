@@ -8,8 +8,8 @@ import Calendar from "./Calendar";
 import Campaigns from "./Campaigns";
 import Chat from "./Chat";
 import Files from "./Files";
-import LandingPage from "./Landing";
 import MainLayout from "./MainLayout";
+import Overview from "./Overview";
 import Settings from "./Settings";
 import Summary from "./Summary";
 import Users from "./Users";
@@ -29,7 +29,7 @@ const App: React.FC = () => {
             children: [
                 {
                     index: true,
-                    element: <LandingPage />,
+                    element: <Overview />,
                 },
                 {
                     path: "analytics",

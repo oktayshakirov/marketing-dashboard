@@ -27,9 +27,9 @@ const Header = () => {
     const hoverBg = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.4)");
 
     const loadData = async () => {
-        const clientsUrl = `${import.meta.env.VITE_BACKEND_URL}/clients.json`;
-        const userUrl = `${import.meta.env.VITE_BACKEND_URL}/users.json`;
-        const notificationsUrl = `${import.meta.env.VITE_BACKEND_URL}/notifications.json`;
+        const clientsUrl = `${import.meta.env.VITE_BACKEND_URL}/clients`;
+        const userUrl = `${import.meta.env.VITE_BACKEND_URL}/users`;
+        const notificationsUrl = `${import.meta.env.VITE_BACKEND_URL}/notifications`;
 
         try {
             const [clientsResponse, userResponse, notificationsResponse] = await Promise.all([
