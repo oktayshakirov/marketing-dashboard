@@ -1,46 +1,19 @@
-import { Box, BoxProps, useStyleConfig } from "@chakra-ui/react";
+import { Box, BoxProps, useColorModeValue } from "@chakra-ui/react";
+import React from "react";
 
-// Define interfaces for props
 interface CardProps extends BoxProps {
-    variant?: string;
+    children: React.ReactNode;
 }
 
-interface CardBodyProps extends BoxProps {
-    variant?: string;
-}
+const Card: React.FC<CardProps> = ({ children, ...props }) => {
+    const bgColor = useColorModeValue("rgba(161, 255, 206, 0.15)", "gray.700");
+    const shadow = useColorModeValue("md", "dark-lg");
 
-interface CardHeaderProps extends BoxProps {
-    variant?: string;
-}
-
-// Card Component
-function Card({ variant, children, ...rest }: CardProps) {
-    const styles = useStyleConfig("Card", { variant });
     return (
-        <Box __css={styles} {...rest}>
+        <Box bg={bgColor} boxShadow={shadow} rounded="lg" p="5" {...props}>
             {children}
         </Box>
     );
-}
+};
 
-// CardBody Component
-function CardBody({ variant, children, ...rest }: CardBodyProps) {
-    const styles = useStyleConfig("CardBody", { variant });
-    return (
-        <Box __css={styles} {...rest}>
-            {children}
-        </Box>
-    );
-}
-
-// CardHeader Component
-function CardHeader({ variant, children, ...rest }: CardHeaderProps) {
-    const styles = useStyleConfig("CardHeader", { variant });
-    return (
-        <Box __css={styles} {...rest}>
-            {children}
-        </Box>
-    );
-}
-
-export { Card, CardBody, CardHeader };
+export default Card;

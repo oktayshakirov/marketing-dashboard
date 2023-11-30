@@ -1,23 +1,31 @@
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
-import { BarChart, LineChart } from "@components/Charts";
+import Card from "@/components/Card";
+import AreaChart from "@/components/Charts/AreaChart";
+import BarChart from "@/components/Charts/BarChart";
+import LineChart from "@/components/Charts/LineChart";
+import { Flex } from "@chakra-ui/react";
+import React from "react";
 
 const Overview: React.FC = () => {
     return (
-        <Flex flexDirection="column" pt={{ base: "120px", md: "75px" }} align="start">
-            <SimpleGrid columns={{ sm: 1, md: 2, xl: 2 }} spacing="24px" mb="40px">
-                <Box>
-                    <Text fontSize="xl" fontWeight="bold">
-                        Monthly Sales
-                    </Text>
-                    <BarChart />
-                </Box>
-                <Box>
-                    <Text fontSize="xl" fontWeight="bold">
-                        User Engagement
-                    </Text>
-                    <LineChart />
-                </Box>
-            </SimpleGrid>
+        <Flex direction={{ base: "column", md: "row" }} wrap="wrap" gap={5}>
+            <Card width={{ base: "100%", md: "48%" }}>
+                <LineChart category="Sales" lineDataKey="Sales" />
+            </Card>
+            <Card width={{ base: "100%", md: "48%" }}>
+                <LineChart category="Traffic" lineDataKey="Traffic" />
+            </Card>
+            <Card width={{ base: "100%", md: "48%" }}>
+                <AreaChart category="Traffic" areaDataKey="data" />
+            </Card>
+            <Card width={{ base: "100%", md: "48%" }}>
+                <AreaChart category="Sales" areaDataKey="data" />
+            </Card>
+            <Card width={{ base: "100%", md: "48%" }}>
+                <BarChart category="Sales" barDataKey="data" />
+            </Card>
+            <Card width={{ base: "100%", md: "48%" }}>
+                <BarChart category="Traffic" barDataKey="data" />
+            </Card>
         </Flex>
     );
 };

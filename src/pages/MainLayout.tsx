@@ -5,12 +5,16 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 const MainLayout: React.FC = () => {
+    const sidebarWidth = "200px";
+
     return (
-        <Flex minHeight="100vh">
-            <Sidebar />
-            <Flex direction="column" flex="1" width="100%">
+        <Flex>
+            <Box as="aside" position="fixed" width={sidebarWidth} height="100vh">
+                <Sidebar />
+            </Box>
+            <Flex direction="column" flex="1" ml={{ base: "0", md: sidebarWidth }}>
                 <Header />
-                <Box as="main" p="4" flex="1">
+                <Box as="main" p="4" flex="1" overflowY="auto">
                     <Outlet />
                 </Box>
             </Flex>
