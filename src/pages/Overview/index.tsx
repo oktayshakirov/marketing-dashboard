@@ -25,12 +25,10 @@ const Overview: React.FC = () => {
             <MiniStatistics keyName="reach" icon={<Icon as={MdOutlineStackedBarChart} />} />
             <MiniStatistics keyName="uniqueClicks" icon={<Icon as={MdAdsClick} />} />
             <MiniStatistics keyName="uniqueCTR" icon={<Icon as={MdOutlineAddChart} />} />
-            <LineChart category="Sales" lineDataKey="Sales" />
-            <LineChart category="Traffic" lineDataKey="Traffic" />
-            <AreaChart category="Traffic" areaDataKey="data" />
-            <AreaChart category="Sales" areaDataKey="data" />
-            <BarChart category="Sales" barDataKey="data" />
-            <BarChart category="Traffic" barDataKey="data" />
+            <BarChart keyName="leadsAge" barDataKey="data" />
+            <BarChart keyName="leadsGender" barDataKey="data" />
+            <LineChart keyName="traffic" lineDataKey="data" />
+            <AreaChart keyName="sales" areaDataKey="data" />
         </Flex>
     );
 };

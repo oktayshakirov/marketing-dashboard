@@ -1,4 +1,82 @@
-{
-    "name": "Oktay Shakirov",
-    "role": "Admin"
-}
+[
+    {
+        "id": 1,
+        "name": "Oktay Shakirov",
+        "role": "Admin",
+        "email": "oktayshakirov@gmail.com",
+        "status": "online",
+        "tel": "+491635473192"
+    },
+    {
+        "id": 2,
+        "name": "Darwin Wiranda",
+        "role": "Admin",
+        "email": "darwin.wiranda@example.com",
+        "status": "online",
+        "tel": "+1234567890"
+    },
+    {
+        "id": 3,
+        "name": "Vladimir Boyanov",
+        "role": "Admin",
+        "email": "vladimir.boyanov@example.com",
+        "status": "online",
+        "tel": "+0987654321"
+    },
+    {
+        "id": 4,
+        "name": "Alex K",
+        "role": "Account Manager",
+        "email": "alex.k@example.com",
+        "status": "offline",
+        "tel": "+1122334455"
+    },
+    {
+        "id": 5,
+        "name": "Vasilis Konstantoudakis",
+        "role": "Account Manager",
+        "email": "vasilis.k@example.com",
+        "status": "online",
+        "tel": "+1223344556"
+    },
+    {
+        "id": 6,
+        "name": "Michael Brown",
+        "role": "Client",
+        "email": "michael.brown@example.com",
+        "status": "offline",
+        "tel": "+1231231234"
+    },
+    {
+        "id": 7,
+        "name": "Lisa White",
+        "role": "Client",
+        "email": "lisa.white@example.com",
+        "status": "online",
+        "tel": "+1414141414"
+    },
+    {
+        "id": 8,
+        "name": "James Harris",
+        "role": "Freelancer",
+        "email": "james.harris@example.com",
+        "status": "offline",
+        "tel": "+1515151515"
+    },
+    {
+        "id": 9,
+        "name": "Linda Clark",
+        "role": "Client",
+        "email": "linda.clark@example.com",
+        "status": "offline",
+        "tel": "+1616161616"
+    },
+    {
+        "id": 10,
+        "name": "Robert Lewis",
+        "role": "Freelancer",
+        "email": "robert.lewis@example.com",
+        "status": "online",
+        "tel": "+1717171717"
+    }
+]

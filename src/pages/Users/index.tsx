@@ -1,7 +1,13 @@
-import { Text } from "@chakra-ui/react";
+import UsersTable from "@/components/Users";
+import { Box } from "@chakra-ui/react";
+import React from "react";
 
 const Users: React.FC = () => {
-    return <Text>Implement Users page here</Text>;
+    return (
+        <Box>
+            <UsersTable />
+        </Box>
+    );
 };
 
 export default Users;

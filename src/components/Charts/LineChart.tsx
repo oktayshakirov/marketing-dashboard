@@ -3,23 +3,25 @@ import { PureComponent } from "react";
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 interface ChartData {
+    name: string;
     [key: string]: string | number;
 }
 
-interface RawDataItem {
-    category: string;
+interface ChartDataSet {
+    title: string;
     labels: string[];
     data: number[];
     data2: number[];
 }
 
 interface LineChartProps {
+    keyName: string;
     lineDataKey: string;
-    category: string;
 }
 
 interface LineChartState {
     data: ChartData[];
+    title: string;
     isLoading: boolean;
     error: string | null;
 }
@@ -27,6 +29,7 @@ interface LineChartState {
 export default class SimpleLineChart extends PureComponent<LineChartProps, LineChartState> {
     state: LineChartState = {
         data: [],
+        title: "",
         isLoading: true,
         error: null,
     };
@@ -34,33 +37,38 @@ export default class SimpleLineChart extends PureComponent<LineChartProps, LineC
     componentDidMount() {
         fetch("/fake/charts")
             .then((response) => response.json())
-            .then((data: RawDataItem[]) => this.transformData(data))
+            .then((allData: { [key: string]: ChartDataSet }) => {
+                const { keyName } = this.props;
+                const chartData = allData[keyName];
+                if (chartData) {
+                    this.transformData(chartData);
+                    this.setState({ title: chartData.title });
+                } else {
+                    this.setState({ error: `Data not found for keyName: ${keyName}`, isLoading: false });
+                }
+            })
             .catch((error) => {
                 this.setState({ error: error.message, isLoading: false });
             });
     }
 
-    transformData(rawData: RawDataItem[]) {
-        const { category, lineDataKey } = this.props;
-
-        const categoryData = rawData.find((item) => item.category === category);
-        if (categoryData) {
-            const transformedData: ChartData[] = categoryData.labels.map((label, index) => ({
-                name: label,
-                [lineDataKey]: categoryData.data[index],
-                data2: categoryData.data2[index],
-            }));
-            this.setState({ data: transformedData, isLoading: false });
-        } else {
-            this.setState({ error: `Data not found for category: ${category}`, isLoading: false });
-        }
+    transformData(chartData: ChartDataSet) {
+        const { lineDataKey } = this.props;
+        const transformedData = chartData.labels.map((label, index) => ({
+            name: label,
+            [lineDataKey]: chartData.data[index],
+            data2: chartData.data2[index],
+        }));
+        this.setState({ data: transformedData, isLoading: false });
     }
 
-    renderChart(data: ChartData[]) {
+    renderChart(data: ChartData[], title: string) {
         const { lineDataKey } = this.props;
-
         return (
             <Card width={{ base: "100%", md: "47%" }}>
+                <div style={{ textAlign: "center", marginBottom: "20px" }}>
+                    <h3>{title}</h3>
+                </div>
                 <ResponsiveContainer width="100%" height={300}>
                     <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -77,7 +85,7 @@ export default class SimpleLineChart extends PureComponent<LineChartProps, LineC
     }
 
     render() {
-        const { isLoading, error, data } = this.state;
+        const { isLoading, error, data, title } = this.state;
 
         if (isLoading) {
             return <div>Loading...</div>;
@@ -87,6 +95,6 @@ export default class SimpleLineChart extends PureComponent<LineChartProps, LineC
             return <div>Error: {error}</div>;
         }
 
-        return data.length > 0 ? this.renderChart(data) : <div>No data available.</div>;
+        return data.length > 0 ? this.renderChart(data, title) : <div>No data available.</div>;
     }
 }

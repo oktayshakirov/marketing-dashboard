@@ -28,7 +28,7 @@ const Header = () => {
 
     const loadData = async () => {
         const clientsUrl = `${import.meta.env.VITE_BACKEND_URL}/clients`;
-        const userUrl = `${import.meta.env.VITE_BACKEND_URL}/users`;
+        const userUrl = `${import.meta.env.VITE_BACKEND_URL}/currentUser`;
         const notificationsUrl = `${import.meta.env.VITE_BACKEND_URL}/notifications`;
 
         try {

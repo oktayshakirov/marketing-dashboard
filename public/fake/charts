@@ -1,6 +1,6 @@
-[
-    {
-        "category": "Sales",
+{
+    "sales": {
+        "title": "Generated Sales",
         "labels": [
             "Jan",
             "Feb",
@@ -44,8 +44,8 @@
             390
         ]
     },
-    {
-        "category": "Traffic",
+    "traffic": {
+        "title": "Website Visits",
         "labels": [
             "Week 1",
             "Week 2",
@@ -67,5 +67,37 @@
             1150,
             250
         ]
+    },
+    "leadsAge": {
+        "title": "Leads | Age",
+        "labels": [
+            "18-24",
+            "25-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65+"
+        ],
+        "data": [
+            25,
+            27,
+            34,
+            10,
+            2,
+            0
+        ]
+    },
+    "leadsGender": {
+        "title": "Leads | Gender",
+        "labels": [
+            "Male",
+            "Female",
+            "Unknown"
+        ],
+        "data": [
+            25,
+            27,
+            2
+        ]
     }
-]
+}

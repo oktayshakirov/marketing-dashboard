@@ -15,7 +15,7 @@ interface MiniStatisticsProps {
 
 const MiniStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
     const [data, setData] = useState<StatisticsData>({ title: "", amount: "", percentage: 0 });
-    const iconTeal = useColorModeValue("teal.300", "teal.300");
+    const iconTeal = useColorModeValue("#A1FFCE", "#A1FFCE");
     const textColor = useColorModeValue("gray.700", "white");
 
     useEffect(() => {
