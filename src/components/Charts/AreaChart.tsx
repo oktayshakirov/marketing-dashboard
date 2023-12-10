@@ -1,3 +1,4 @@
+import Card from "@/components/Card";
 import { PureComponent } from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
@@ -60,18 +61,20 @@ export default class SimpleAreaChart extends PureComponent<AreaChartProps, AreaC
         const { areaDataKey } = this.props;
 
         return (
-            <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Area type="monotone" dataKey={areaDataKey} stroke="#8884d8" fill="#8884d8" />
-                    {/* Uncomment if you want a second area
+            <Card width={{ base: "100%", md: "47%" }}>
+                <ResponsiveContainer width="100%" height={300}>
+                    <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area type="monotone" dataKey={areaDataKey} stroke="black" fill="green" />
+                        {/* Uncomment if you want a second area
                     <Area type="monotone" dataKey="data2" stroke="#82ca9d" fill="#82ca9d" />
                     */}
-                </AreaChart>
-            </ResponsiveContainer>
+                    </AreaChart>
+                </ResponsiveContainer>
+            </Card>
         );
     }
 

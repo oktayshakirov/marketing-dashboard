@@ -1,0 +1,42 @@
+{
+    "leads": {
+        "title": "Leads All",
+        "amount": "108",
+        "percentage": 5
+    },
+    "costLead": {
+        "title": "Cost Per Lead",
+        "amount": "$13.32",
+        "percentage": -3
+    },
+    "adSpend": {
+        "title": "Ad Spend",
+        "amount": "$1,020",
+        "percentage": 23
+    },
+    "uniqueOutboundClicks": {
+        "title": "Unique Outbound Clicks",
+        "amount": "9",
+        "percentage": 1
+    },
+    "impressions": {
+        "title": "Impressions",
+        "amount": "95,512",
+        "percentage": 23
+    },
+    "reach": {
+        "title": "Reach",
+        "amount": "37,532",
+        "percentage": -12
+    },
+    "uniqueClicks": {
+        "title": "Unique Clicks",
+        "amount": "2,234",
+        "percentage": 2
+    },
+    "uniqueCTR": {
+        "title": "Unique CTR",
+        "amount": "6.25%",
+        "percentage": 2
+    }
+}

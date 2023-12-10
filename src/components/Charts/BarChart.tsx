@@ -1,3 +1,4 @@
+import Card from "@/components/Card";
 import { PureComponent } from "react";
 import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
@@ -60,19 +61,21 @@ export default class SimpleBarChart extends PureComponent<BarChartProps, BarChar
         const { barDataKey } = this.props;
 
         return (
-            <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey={barDataKey} fill="#8884d8" />
-                    {/* Uncomment if you want a second bar
+            <Card width={{ base: "100%", md: "47%" }}>
+                <ResponsiveContainer width="100%" height={300}>
+                    <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="name" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Bar dataKey={barDataKey} fill="green" />
+                        {/* Uncomment if you want a second bar
                     <Bar dataKey="data2" fill="#82ca9d" />
                     */}
-                </BarChart>
-            </ResponsiveContainer>
+                    </BarChart>
+                </ResponsiveContainer>
+            </Card>
         );
     }
 
