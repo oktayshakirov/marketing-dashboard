@@ -14,43 +14,56 @@ import {
 } from "@chakra-ui/react";
 import FullscreenLoader from "@components/FullscreenLoader";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const Header = () => {
     const [clients, setClients] = useState<{ id: string; name: string }[]>([]);
     const [user, setUser] = useState({ name: "", role: "" });
     const [notificationCount, setNotificationCount] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
-
-    // Glassy effect styles
     const glassyBg = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(255, 255, 255, 0.3)");
     const hoverBg = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.4)");
 
-    const loadData = async () => {
+    interface User {
+        id: number;
+        name: string;
+        role: string;
+    }
+
+    const loadData = useCallback(async () => {
+        const usersUrl = `${import.meta.env.VITE_BACKEND_URL}/users`;
         const clientsUrl = `${import.meta.env.VITE_BACKEND_URL}/clients`;
-        const userUrl = `${import.meta.env.VITE_BACKEND_URL}/currentUser`;
         const notificationsUrl = `${import.meta.env.VITE_BACKEND_URL}/notifications`;
 
         try {
-            const [clientsResponse, userResponse, notificationsResponse] = await Promise.all([
+            const [usersResponse, clientsResponse, notificationsResponse] = await Promise.all([
+                axios.get(usersUrl),
                 axios.get(clientsUrl),
-                axios.get(userUrl),
                 axios.get(notificationsUrl),
             ]);
 
             setClients(clientsResponse.data);
-            setUser(userResponse.data);
+
+            const currentUserId = 1;
+            const currentUser = usersResponse.data.find((user: User) => user.id === currentUserId);
+
+            if (currentUser) {
+                setUser({ name: currentUser.name, role: currentUser.role });
+            } else {
+                console.error("Current user not found in the list");
+            }
+
             setNotificationCount(notificationsResponse.data.count);
         } catch (error) {
             console.error("Error loading data:", error);
         } finally {
             setIsLoading(false);
         }
-    };
+    }, []);
 
     useEffect(() => {
         loadData();
-    }, []);
+    }, [loadData]);
 
     if (isLoading) {
         return <FullscreenLoader />;
