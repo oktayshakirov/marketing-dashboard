@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import { Box, Heading } from "@chakra-ui/react";
 import { PureComponent } from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
@@ -66,16 +67,18 @@ export default class SimpleAreaChart extends PureComponent<AreaChartProps, AreaC
         const { areaDataKey } = this.props;
         return (
             <Card width={{ base: "100%", md: "47%" }}>
-                <div style={{ textAlign: "center", marginBottom: "20px" }}>
-                    <h3>{title}</h3>
-                </div>
+                <Box textAlign="center" mb="20px">
+                    <Heading as="h3" size="md">
+                        {title}
+                    </Heading>
+                </Box>
                 <ResponsiveContainer width="100%" height={300}>
                     <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip />
-                        <Area type="monotone" dataKey={areaDataKey} stroke="gray" fill="#A1FFCE" />
+                        <Area type="monotone" dataKey={areaDataKey} fill="#A1FFCE" stroke="cyan" />
                         {/* <Area type="monotone" dataKey="data2" stroke="#82ca9d" fill="#82ca9d" /> */}
                     </AreaChart>
                 </ResponsiveContainer>

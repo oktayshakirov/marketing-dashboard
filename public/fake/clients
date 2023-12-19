@@ -1,5 +1,22 @@
 [
-    { "id": "1", "name": "Client 1" },
-    { "id": "2", "name": "Client 2" },
-    { "id": "3", "name": "Client 3" }
+    {
+        "id": "1",
+        "name": "Bayer AskMed"
+    },
+    {
+        "id": "2",
+        "name": "XYZ Inc"
+    },
+    {
+        "id": "3",
+        "name": "123 Retail"
+    },
+    {
+        "id": "4",
+        "name": "Education Ltd"
+    },
+    {
+        "id": "5",
+        "name": "Hurom GmbH"
+    }
 ]

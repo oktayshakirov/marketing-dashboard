@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import { Box, Heading } from "@chakra-ui/react";
 import { PureComponent } from "react";
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
@@ -66,9 +67,11 @@ export default class SimpleLineChart extends PureComponent<LineChartProps, LineC
         const { lineDataKey } = this.props;
         return (
             <Card width={{ base: "100%", md: "47%" }}>
-                <div style={{ textAlign: "center", marginBottom: "20px" }}>
-                    <h3>{title}</h3>
-                </div>
+                <Box textAlign="center" mb="20px">
+                    <Heading as="h3" size="md">
+                        {title}
+                    </Heading>
+                </Box>
                 <ResponsiveContainer width="100%" height={300}>
                     <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -77,7 +80,7 @@ export default class SimpleLineChart extends PureComponent<LineChartProps, LineC
                         <Tooltip />
                         <Legend />
                         <Line type="monotone" dataKey={lineDataKey} stroke="green" strokeWidth={3} name="Line 1" />
-                        <Line type="monotone" dataKey="data2" stroke="red" strokeWidth={3} name="Line 2" />
+                        <Line type="monotone" dataKey="data2" stroke="cyan" strokeWidth={3} name="Line 2" />
                     </LineChart>
                 </ResponsiveContainer>
             </Card>

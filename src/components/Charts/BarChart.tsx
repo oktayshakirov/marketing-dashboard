@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import { Box, Heading } from "@chakra-ui/react";
 import { PureComponent } from "react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
@@ -66,9 +67,11 @@ export default class SimpleBarChart extends PureComponent<BarChartProps, BarChar
         const { barDataKey } = this.props;
         return (
             <Card width={{ base: "100%", md: "47%" }}>
-                <div style={{ textAlign: "center", marginBottom: "20px" }}>
-                    <h3>{title}</h3>
-                </div>
+                <Box textAlign="center" mb="20px">
+                    <Heading as="h3" size="md">
+                        {title}
+                    </Heading>
+                </Box>
                 <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -76,7 +79,7 @@ export default class SimpleBarChart extends PureComponent<BarChartProps, BarChar
                         <YAxis />
                         <Tooltip />
 
-                        <Bar dataKey={barDataKey} fill="#A1FFCE" />
+                        <Bar dataKey={barDataKey} fill="#A1FFCE" stroke="cyan" />
                         {/* <Bar dataKey="data2" fill="#82ca9d" /> */}
                     </BarChart>
                 </ResponsiveContainer>
