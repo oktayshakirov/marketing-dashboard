@@ -25,10 +25,10 @@ const Analytics: React.FC = () => {
             <MiniStatistics keyName="reach" icon={<Icon as={MdOutlineStackedBarChart} />} />
             <MiniStatistics keyName="uniqueClicks" icon={<Icon as={MdAdsClick} />} />
             <MiniStatistics keyName="uniqueCTR" icon={<Icon as={MdOutlineAddChart} />} />
-            <BarChart keyName="leadsAge" barDataKey="data" />
-            <BarChart keyName="leadsGender" barDataKey="data" />
             <LineChart keyName="traffic" lineDataKey="data" />
             <AreaChart keyName="sales" areaDataKey="data" />
+            <BarChart keyName="leadsAge" barDataKey="data" />
+            <BarChart keyName="leadsGender" barDataKey="data" />
         </Flex>
     );
 };

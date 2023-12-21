@@ -1,4 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import "@fontsource-variable/onest";
 
 const mainTheme = extendTheme({

@@ -1,4 +1,4 @@
-import { Box, BoxProps, useColorModeValue } from "@chakra-ui/react";
+import { Box, BoxProps } from "@chakra-ui/react";
 import React from "react";
 
 interface CardProps extends BoxProps {
@@ -6,10 +6,8 @@ interface CardProps extends BoxProps {
 }
 
 const Card: React.FC<CardProps> = ({ children, ...props }) => {
-    const bgColor = useColorModeValue("rgba(161, 255, 206, 0.15)", "gray.700");
-
     return (
-        <Box bg={bgColor} boxShadow="md" rounded="lg" p="5" {...props}>
+        <Box bg={"#f7f8f9"} boxShadow="md" rounded="lg" p="5" {...props}>
             {children}
         </Box>
     );

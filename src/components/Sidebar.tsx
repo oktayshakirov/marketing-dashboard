@@ -39,7 +39,7 @@ const SidebarLink: React.FC<SidebarLinkProps> = ({ icon, children, to }) => {
     const isActive = location.pathname === to;
     const activeBg = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(255, 255, 255, 0.3)");
     const inactiveBg = useColorModeValue("transparent", "transparent");
-    const activeColor = useColorModeValue("blue.500", "blue.300");
+    const activeColor = useColorModeValue("green.500", "green.300");
     const inactiveColor = useColorModeValue("gray.600", "gray.400");
     const hoverBg = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.4)");
 
@@ -111,7 +111,7 @@ const Sidebar: React.FC = () => {
                 height="100vh"
                 py="4"
                 px="3"
-                bg="linear-gradient(to right, #A1FFCE, #86fde8)"
+                bg="#f7f8f9"
                 display={{ base: "none", md: "block" }}
             >
                 <Box marginBottom="6" paddingX="3">

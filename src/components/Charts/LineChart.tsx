@@ -80,7 +80,7 @@ export default class SimpleLineChart extends PureComponent<LineChartProps, LineC
                         <Tooltip />
                         <Legend />
                         <Line type="monotone" dataKey={lineDataKey} stroke="green" strokeWidth={3} name="Line 1" />
-                        <Line type="monotone" dataKey="data2" stroke="cyan" strokeWidth={3} name="Line 2" />
+                        <Line type="monotone" dataKey="data2" stroke="red" strokeWidth={3} name="Line 2" />
                     </LineChart>
                 </ResponsiveContainer>
             </Card>

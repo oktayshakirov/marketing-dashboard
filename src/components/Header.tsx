@@ -70,7 +70,7 @@ const Header = () => {
     }
 
     return (
-        <Flex direction="column" bg="linear-gradient(to left, #A1FFCE, #86fde8)" p="4">
+        <Flex direction="column" bg="#f7f8f9" p="4" sx={{ zIndex: 10 }}>
             <Flex justifyContent="space-between" alignItems="center">
                 {/* Left Side: Clients List */}
                 <Menu>

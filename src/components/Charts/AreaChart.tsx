@@ -78,7 +78,7 @@ export default class SimpleAreaChart extends PureComponent<AreaChartProps, AreaC
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip />
-                        <Area type="monotone" dataKey={areaDataKey} fill="#A1FFCE" stroke="cyan" />
+                        <Area type="monotone" dataKey={areaDataKey} fill="#51F2BF" stroke="green" strokeWidth={3} />
                         {/* <Area type="monotone" dataKey="data2" stroke="#82ca9d" fill="#82ca9d" /> */}
                     </AreaChart>
                 </ResponsiveContainer>

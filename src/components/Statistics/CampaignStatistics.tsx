@@ -22,7 +22,7 @@ interface MiniStatisticsProps {
 
 const CampaignStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
     const [data, setData] = useState<StatisticsData>({ title: "", amount: "" });
-    const iconTeal = useColorModeValue("#A1FFCE", "#A1FFCE");
+    const iconTeal = useColorModeValue("#51F2BF", "#51F2BF");
     const textColor = useColorModeValue("gray.700", "white");
 
     useEffect(() => {

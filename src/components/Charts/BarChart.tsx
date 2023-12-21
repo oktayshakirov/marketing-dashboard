@@ -79,7 +79,7 @@ export default class SimpleBarChart extends PureComponent<BarChartProps, BarChar
                         <YAxis />
                         <Tooltip />
 
-                        <Bar dataKey={barDataKey} fill="#A1FFCE" stroke="cyan" />
+                        <Bar dataKey={barDataKey} fill="#51F2BF" stroke="#51F2BF" />
                         {/* <Bar dataKey="data2" fill="#82ca9d" /> */}
                     </BarChart>
                 </ResponsiveContainer>
