@@ -1,42 +1,222 @@
 {
-    "leads": {
-        "title": "Leads All",
-        "amount": "108",
-        "percentage": 5
+    "1": {
+        "statistics": {
+            "leads": {
+                "title": "Leads All - Bayer AskMed",
+                "amount": "108",
+                "percentage": 5
+            },
+            "costLead": {
+                "title": "Cost Per Lead - Bayer AskMed",
+                "amount": "$13.32",
+                "percentage": -3
+            },
+            "adSpend": {
+                "title": "Ad Spend - Bayer AskMed",
+                "amount": "$1,020",
+                "percentage": 23
+            },
+            "uniqueOutboundClicks": {
+                "title": "Unique Outbound Clicks - Bayer AskMed",
+                "amount": "9",
+                "percentage": 1
+            },
+            "impressions": {
+                "title": "Impressions - Bayer AskMed",
+                "amount": "95,512",
+                "percentage": 23
+            },
+            "reach": {
+                "title": "Reach - Bayer AskMed",
+                "amount": "37,532",
+                "percentage": -12
+            },
+            "uniqueClicks": {
+                "title": "Unique Clicks - Bayer AskMed",
+                "amount": "2,234",
+                "percentage": 2
+            },
+            "uniqueCTR": {
+                "title": "Unique CTR - Bayer AskMed",
+                "amount": "6.25%",
+                "percentage": 2
+            }
+        }
     },
-    "costLead": {
-        "title": "Cost Per Lead",
-        "amount": "$13.32",
-        "percentage": -3
+    "2": {
+        "statistics": {
+            "leads": {
+                "title": "Leads All - XYZ Inc",
+                "amount": "150",
+                "percentage": 10
+            },
+            "costLead": {
+                "title": "Cost Per Lead - XYZ Inc",
+                "amount": "$10.75",
+                "percentage": 1
+            },
+            "adSpend": {
+                "title": "Ad Spend - XYZ Inc",
+                "amount": "$1,500",
+                "percentage": 15
+            },
+            "uniqueOutboundClicks": {
+                "title": "Unique Outbound Clicks - XYZ Inc",
+                "amount": "15",
+                "percentage": 3
+            },
+            "impressions": {
+                "title": "Impressions - XYZ Inc",
+                "amount": "120,000",
+                "percentage": 18
+            },
+            "reach": {
+                "title": "Reach - XYZ Inc",
+                "amount": "45,000",
+                "percentage": -8
+            },
+            "uniqueClicks": {
+                "title": "Unique Clicks - XYZ Inc",
+                "amount": "3,000",
+                "percentage": 5
+            },
+            "uniqueCTR": {
+                "title": "Unique CTR - XYZ Inc",
+                "amount": "7.50%",
+                "percentage": 3
+            }
+        }
     },
-    "adSpend": {
-        "title": "Ad Spend",
-        "amount": "$1,020",
-        "percentage": 23
+    "3": {
+        "statistics": {
+            "leads": {
+                "title": "Leads All - 123 Retail",
+                "amount": "95",
+                "percentage": 4
+            },
+            "costLead": {
+                "title": "Cost Per Lead - 123 Retail",
+                "amount": "$12.50",
+                "percentage": -2
+            },
+            "adSpend": {
+                "title": "Ad Spend - 123 Retail",
+                "amount": "$800",
+                "percentage": 10
+            },
+            "uniqueOutboundClicks": {
+                "title": "Unique Outbound Clicks - 123 Retail",
+                "amount": "7",
+                "percentage": 0
+            },
+            "impressions": {
+                "title": "Impressions - 123 Retail",
+                "amount": "85,000",
+                "percentage": 20
+            },
+            "reach": {
+                "title": "Reach - 123 Retail",
+                "amount": "30,000",
+                "percentage": -5
+            },
+            "uniqueClicks": {
+                "title": "Unique Clicks - 123 Retail",
+                "amount": "1,800",
+                "percentage": 1
+            },
+            "uniqueCTR": {
+                "title": "Unique CTR - 123 Retail",
+                "amount": "5.75%",
+                "percentage": -1
+            }
+        }
     },
-    "uniqueOutboundClicks": {
-        "title": "Unique Outbound Clicks",
-        "amount": "9",
-        "percentage": 1
+    "4": {
+        "statistics": {
+            "leads": {
+                "title": "Leads All - Education Ltd",
+                "amount": "120",
+                "percentage": 6
+            },
+            "costLead": {
+                "title": "Cost Per Lead - Education Ltd",
+                "amount": "$15.00",
+                "percentage": 2
+            },
+            "adSpend": {
+                "title": "Ad Spend - Education Ltd",
+                "amount": "$1,200",
+                "percentage": 12
+            },
+            "uniqueOutboundClicks": {
+                "title": "Unique Outbound Clicks - Education Ltd",
+                "amount": "10",
+                "percentage": 2
+            },
+            "impressions": {
+                "title": "Impressions - Education Ltd",
+                "amount": "100,000",
+                "percentage": 15
+            },
+            "reach": {
+                "title": "Reach - Education Ltd",
+                "amount": "40,000",
+                "percentage": -7
+            },
+            "uniqueClicks": {
+                "title": "Unique Clicks - Education Ltd",
+                "amount": "2,500",
+                "percentage": 3
+            },
+            "uniqueCTR": {
+                "title": "Unique CTR - Education Ltd",
+                "amount": "6.00%",
+                "percentage": 1
+            }
+        }
     },
-    "impressions": {
-        "title": "Impressions",
-        "amount": "95,512",
-        "percentage": 23
-    },
-    "reach": {
-        "title": "Reach",
-        "amount": "37,532",
-        "percentage": -12
-    },
-    "uniqueClicks": {
-        "title": "Unique Clicks",
-        "amount": "2,234",
-        "percentage": 2
-    },
-    "uniqueCTR": {
-        "title": "Unique CTR",
-        "amount": "6.25%",
-        "percentage": 2
+    "5": {
+        "statistics": {
+            "leads": {
+                "title": "Leads All - Hurom GmbH",
+                "amount": "110",
+                "percentage": 3
+            },
+            "costLead": {
+                "title": "Cost Per Lead - Hurom GmbH",
+                "amount": "$11.00",
+                "percentage": -1
+            },
+            "adSpend": {
+                "title": "Ad Spend - Hurom GmbH",
+                "amount": "$950",
+                "percentage": 8
+            },
+            "uniqueOutboundClicks": {
+                "title": "Unique Outbound Clicks - Hurom GmbH",
+                "amount": "6",
+                "percentage": -2
+            },
+            "impressions": {
+                "title": "Impressions - Hurom GmbH",
+                "amount": "70,000",
+                "percentage": 10
+            },
+            "reach": {
+                "title": "Reach - Hurom GmbH",
+                "amount": "25,000",
+                "percentage": -10
+            },
+            "uniqueClicks": {
+                "title": "Unique Clicks - Hurom GmbH",
+                "amount": "1,500",
+                "percentage": -1
+            },
+            "uniqueCTR": {
+                "title": "Unique CTR - Hurom GmbH",
+                "amount": "4.50%",
+                "percentage": -2
+            }
+        }
     }
 }

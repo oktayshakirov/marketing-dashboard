@@ -1,103 +1,527 @@
 {
-    "sales": {
-        "title": "Generated Sales",
-        "labels": [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec"
-        ],
-        "data": [
-            330,
-            250,
-            110,
-            300,
-            490,
-            350,
-            270,
-            130,
-            425,
-            380,
-            320,
-            410
-        ],
-        "data2": [
-            100,
-            500,
-            100,
-            680,
-            250,
-            320,
-            240,
-            550,
-            400,
-            360,
-            290,
-            390
-        ]
+    "1": {
+        "charts": {
+            "sales": {
+                "title": "Generated Sales - Bayer AskMed",
+                "labels": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                "data": [
+                    330,
+                    250,
+                    110,
+                    300,
+                    490,
+                    350,
+                    270,
+                    130,
+                    425,
+                    380,
+                    320,
+                    410
+                ],
+                "data2": [
+                    100,
+                    500,
+                    100,
+                    680,
+                    250,
+                    320,
+                    240,
+                    550,
+                    400,
+                    360,
+                    290,
+                    390
+                ]
+            },
+            "traffic": {
+                "title": "Website Visits - Bayer AskMed",
+                "labels": [
+                    "Week 1",
+                    "Week 2",
+                    "Week 3",
+                    "Week 4",
+                    "Week 5"
+                ],
+                "data": [
+                    1200,
+                    1150,
+                    1300,
+                    1250,
+                    700
+                ],
+                "data2": [
+                    600,
+                    1050,
+                    1700,
+                    1150,
+                    250
+                ]
+            },
+            "leadsAge": {
+                "title": "Leads | Age - Bayer AskMed",
+                "labels": [
+                    "18-24",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
+                    "65+"
+                ],
+                "data": [
+                    25,
+                    27,
+                    34,
+                    10,
+                    2,
+                    0
+                ]
+            },
+            "leadsGender": {
+                "title": "Leads | Gender - Bayer AskMed",
+                "labels": [
+                    "Male",
+                    "Female",
+                    "Unknown"
+                ],
+                "data": [
+                    25,
+                    27,
+                    2
+                ]
+            }
+        }
     },
-    "traffic": {
-        "title": "Website Visits",
-        "labels": [
-            "Week 1",
-            "Week 2",
-            "Week 3",
-            "Week 4",
-            "Week 5"
-        ],
-        "data": [
-            1200,
-            1150,
-            1300,
-            1250,
-            700
-        ],
-        "data2": [
-            600,
-            1050,
-            1700,
-            1150,
-            250
-        ]
+    "2": {
+        "charts": {
+            "sales": {
+                "title": "Generated Sales - XYZ Inc",
+                "labels": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                "data": [
+                    210,
+                    180,
+                    310,
+                    400,
+                    330,
+                    250,
+                    270,
+                    350,
+                    300,
+                    340,
+                    360,
+                    390
+                ],
+                "data2": [
+                    120,
+                    280,
+                    200,
+                    500,
+                    350,
+                    300,
+                    340,
+                    200,
+                    450,
+                    400,
+                    320,
+                    250
+                ]
+            },
+            "traffic": {
+                "title": "Website Visits - XYZ Inc",
+                "labels": [
+                    "Week 1",
+                    "Week 2",
+                    "Week 3",
+                    "Week 4",
+                    "Week 5"
+                ],
+                "data": [
+                    800,
+                    900,
+                    950,
+                    1000,
+                    1100
+                ],
+                "data2": [
+                    500,
+                    700,
+                    850,
+                    950,
+                    750
+                ]
+            },
+            "leadsAge": {
+                "title": "Leads | Age - XYZ Inc",
+                "labels": [
+                    "18-24",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
+                    "65+"
+                ],
+                "data": [
+                    15,
+                    20,
+                    25,
+                    30,
+                    10,
+                    5
+                ]
+            },
+            "leadsGender": {
+                "title": "Leads | Gender - XYZ Inc",
+                "labels": [
+                    "Male",
+                    "Female",
+                    "Unknown"
+                ],
+                "data": [
+                    30,
+                    20,
+                    5
+                ]
+            }
+        }
     },
-    "leadsAge": {
-        "title": "Leads | Age",
-        "labels": [
-            "18-24",
-            "25-34",
-            "35-44",
-            "45-54",
-            "55-64",
-            "65+"
-        ],
-        "data": [
-            25,
-            27,
-            34,
-            10,
-            2,
-            0
-        ]
+    "3": {
+        "charts": {
+            "sales": {
+                "title": "Generated Sales - 123 Retail",
+                "labels": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                "data": [
+                    410,
+                    320,
+                    230,
+                    340,
+                    450,
+                    560,
+                    470,
+                    380,
+                    290,
+                    400,
+                    510,
+                    620
+                ],
+                "data2": [
+                    210,
+                    180,
+                    190,
+                    220,
+                    260,
+                    310,
+                    350,
+                    300,
+                    250,
+                    280,
+                    320,
+                    350
+                ]
+            },
+            "traffic": {
+                "title": "Website Visits - 123 Retail",
+                "labels": [
+                    "Week 1",
+                    "Week 2",
+                    "Week 3",
+                    "Week 4",
+                    "Week 5"
+                ],
+                "data": [
+                    1400,
+                    1300,
+                    1200,
+                    1500,
+                    1600
+                ],
+                "data2": [
+                    700,
+                    750,
+                    800,
+                    850,
+                    900
+                ]
+            },
+            "leadsAge": {
+                "title": "Leads | Age - 123 Retail",
+                "labels": [
+                    "18-24",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
+                    "65+"
+                ],
+                "data": [
+                    10,
+                    15,
+                    20,
+                    25,
+                    30,
+                    35
+                ]
+            },
+            "leadsGender": {
+                "title": "Leads | Gender - 123 Retail",
+                "labels": [
+                    "Male",
+                    "Female",
+                    "Unknown"
+                ],
+                "data": [
+                    20,
+                    25,
+                    10
+                ]
+            }
+        }
     },
-    "leadsGender": {
-        "title": "Leads | Gender",
-        "labels": [
-            "Male",
-            "Female",
-            "Unknown"
-        ],
-        "data": [
-            25,
-            27,
-            2
-        ]
+    "4": {
+        "charts": {
+            "sales": {
+                "title": "Generated Sales - Education Ltd",
+                "labels": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                "data": [
+                    150,
+                    200,
+                    250,
+                    300,
+                    350,
+                    400,
+                    450,
+                    500,
+                    550,
+                    600,
+                    650,
+                    700
+                ],
+                "data2": [
+                    100,
+                    150,
+                    200,
+                    250,
+                    300,
+                    350,
+                    400,
+                    450,
+                    500,
+                    550,
+                    600,
+                    650
+                ]
+            },
+            "traffic": {
+                "title": "Website Visits - Education Ltd",
+                "labels": [
+                    "Week 1",
+                    "Week 2",
+                    "Week 3",
+                    "Week 4",
+                    "Week 5"
+                ],
+                "data": [
+                    500,
+                    600,
+                    700,
+                    800,
+                    900
+                ],
+                "data2": [
+                    250,
+                    350,
+                    450,
+                    550,
+                    650
+                ]
+            },
+            "leadsAge": {
+                "title": "Leads | Age - Education Ltd",
+                "labels": [
+                    "18-24",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
+                    "65+"
+                ],
+                "data": [
+                    5,
+                    10,
+                    15,
+                    20,
+                    25,
+                    30
+                ]
+            },
+            "leadsGender": {
+                "title": "Leads | Gender - Education Ltd",
+                "labels": [
+                    "Male",
+                    "Female",
+                    "Unknown"
+                ],
+                "data": [
+                    10,
+                    15,
+                    20
+                ]
+            }
+        }
+    },
+    "5": {
+        "charts": {
+            "sales": {
+                "title": "Generated Sales - Hurom GmbH",
+                "labels": [
+                    "Jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                    "Sep",
+                    "Oct",
+                    "Nov",
+                    "Dec"
+                ],
+                "data": [
+                    120,
+                    140,
+                    160,
+                    180,
+                    200,
+                    220,
+                    240,
+                    260,
+                    280,
+                    300,
+                    320,
+                    340
+                ],
+                "data2": [
+                    60,
+                    80,
+                    100,
+                    120,
+                    140,
+                    160,
+                    180,
+                    200,
+                    220,
+                    240,
+                    260,
+                    280
+                ]
+            },
+            "traffic": {
+                "title": "Website Visits - Hurom GmbH",
+                "labels": [
+                    "Week 1",
+                    "Week 2",
+                    "Week 3",
+                    "Week 4",
+                    "Week 5"
+                ],
+                "data": [
+                    300,
+                    400,
+                    500,
+                    600,
+                    700
+                ],
+                "data2": [
+                    150,
+                    250,
+                    350,
+                    450,
+                    550
+                ]
+            },
+            "leadsAge": {
+                "title": "Leads | Age - Hurom GmbH",
+                "labels": [
+                    "18-24",
+                    "25-34",
+                    "35-44",
+                    "45-54",
+                    "55-64",
+                    "65+"
+                ],
+                "data": [
+                    30,
+                    25,
+                    20,
+                    15,
+                    10,
+                    5
+                ]
+            },
+            "leadsGender": {
+                "title": "Leads | Gender - Hurom GmbH",
+                "labels": [
+                    "Male",
+                    "Female",
+                    "Unknown"
+                ],
+                "data": [
+                    15,
+                    20,
+                    25
+                ]
+            }
+        }
     }
 }

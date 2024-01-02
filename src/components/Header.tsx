@@ -13,6 +13,7 @@ import {
     useColorModeValue,
 } from "@chakra-ui/react";
 import FullscreenLoader from "@components/FullscreenLoader";
+import { useClient } from "@contexts/useClientContext";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
@@ -21,6 +22,8 @@ const Header = () => {
     const [user, setUser] = useState({ name: "", role: "" });
     const [notificationCount, setNotificationCount] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
+    const { selectedClient, setSelectedClient } = useClient();
+
     const glassyBg = useColorModeValue("rgba(255, 255, 255, 0.3)", "rgba(255, 255, 255, 0.3)");
     const hoverBg = useColorModeValue("rgba(255, 255, 255, 0.4)", "rgba(255, 255, 255, 0.4)");
 
@@ -29,6 +32,10 @@ const Header = () => {
         name: string;
         role: string;
     }
+
+    const handleClientSelect = (client: { id: string; name: string }) => {
+        setSelectedClient(client);
+    };
 
     const loadData = useCallback(async () => {
         const usersUrl = `${import.meta.env.VITE_BACKEND_URL}/users`;
@@ -43,10 +50,12 @@ const Header = () => {
             ]);
 
             setClients(clientsResponse.data);
+            if (clientsResponse.data.length > 0 && !selectedClient) {
+                setSelectedClient(clientsResponse.data[0]);
+            }
 
             const currentUserId = 1;
             const currentUser = usersResponse.data.find((user: User) => user.id === currentUserId);
-
             if (currentUser) {
                 setUser({ name: currentUser.name, role: currentUser.role });
             } else {
@@ -59,7 +68,7 @@ const Header = () => {
         } finally {
             setIsLoading(false);
         }
-    }, []);
+    }, [selectedClient, setSelectedClient]);
 
     useEffect(() => {
         loadData();
@@ -83,11 +92,13 @@ const Header = () => {
                         backdropFilter="blur(10px)"
                         _hover={{ bg: hoverBg, boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)" }}
                     >
-                        Select Client
+                        {selectedClient ? selectedClient.name : "Select Client"}
                     </MenuButton>
                     <MenuList>
                         {clients.map((client) => (
-                            <MenuItem key={client.id}>{client.name}</MenuItem>
+                            <MenuItem key={client.id} onClick={() => handleClientSelect(client)}>
+                                {client.name}
+                            </MenuItem>
                         ))}
                     </MenuList>
                 </Menu>

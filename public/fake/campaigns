@@ -1,67 +1,226 @@
-[
-    {
-        "name": "Summer Sale",
-        "clientId": "1",
-        "progress": 75,
-        "status": "Ongoing",
-        "todos": [
-            "Design new banners",
-            "Update product listings",
-            "Email campaign setup",
-            "Social media promotion",
-            "Finalize campaign budget"
+{
+    "1": {
+        "campaigns": [
+            {
+                "name": "Summer Sale",
+                "progress": 75,
+                "status": "Ongoing",
+                "todos": [
+                    "Design new banners",
+                    "Update product listings",
+                    "Email campaign setup",
+                    "Social media promotion",
+                    "Finalize campaign budget"
+                ]
+            },
+            {
+                "name": "Winter Fest",
+                "progress": 40,
+                "status": "Planning",
+                "todos": [
+                    "Initial planning",
+                    "Budget allocation",
+                    "Hire additional staff",
+                    "Market research",
+                    "Create promotional content"
+                ]
+            },
+            {
+                "name": "Spring Launch",
+                "progress": 60,
+                "status": "Ongoing",
+                "todos": [
+                    "Product lineup finalization",
+                    "Landing page development",
+                    "Partnership outreach",
+                    "Inventory check",
+                    "Launch event planning"
+                ]
+            },
+            {
+                "name": "Back to School",
+                "progress": 90,
+                "status": "Completed",
+                "todos": [
+                    "School supplies stock",
+                    "Advertising to educational institutions",
+                    "Discount pricing setup",
+                    "Staff training for sales",
+                    "Post-campaign analysis"
+                ]
+            },
+            {
+                "name": "Black Friday",
+                "progress": 30,
+                "status": "Planning",
+                "todos": [
+                    "Early bird deals setup",
+                    "Website capacity testing",
+                    "Hiring seasonal employees",
+                    "Collaborations with influencers",
+                    "Email marketing campaigns"
+                ]
+            }
         ]
     },
-    {
-        "name": "Winter Fest",
-        "clientId": "2",
-        "progress": 40,
-        "status": "Planning",
-        "todos": [
-            "Initial planning",
-            "Budget allocation",
-            "Hire additional staff",
-            "Market research",
-            "Create promotional content"
+    "2": {
+        "campaigns": [
+            {
+                "name": "Tech Expo",
+                "progress": 50,
+                "status": "Planning",
+                "todos": [
+                    "Booth design and setup",
+                    "Product demos preparation",
+                    "Schedule guest speakers",
+                    "Arrange travel and accommodations",
+                    "Launch pre-event marketing"
+                ]
+            },
+            {
+                "name": "Summer Tech Giveaway",
+                "progress": 65,
+                "status": "Ongoing",
+                "todos": [
+                    "Finalize giveaway items",
+                    "Set up online entry system",
+                    "Collaborate with tech bloggers",
+                    "Social media engagement",
+                    "Monitor and adjust ad spend"
+                ]
+            },
+            {
+                "name": "New Year Promotion",
+                "progress": 80,
+                "status": "Ongoing",
+                "todos": [
+                    "Update e-commerce listings",
+                    "Email marketing blasts",
+                    "Loyalty program promotion",
+                    "Staff training for customer queries",
+                    "Analytics tracking setup"
+                ]
+            }
         ]
     },
-    {
-        "name": "Spring Launch",
-        "clientId": "3",
-        "progress": 60,
-        "status": "Ongoing",
-        "todos": [
-            "Product lineup finalization",
-            "Landing page development",
-            "Partnership outreach",
-            "Inventory check",
-            "Launch event planning"
+    "3": {
+        "campaigns": [
+            {
+                "name": "Eco-Friendly Line Launch",
+                "progress": 70,
+                "status": "Ongoing",
+                "todos": [
+                    "Product sustainability report",
+                    "Influencer partnerships",
+                    "Eco-friendly packaging design",
+                    "Develop educational content",
+                    "Plan social media campaign"
+                ]
+            },
+            {
+                "name": "Holiday Season Sale",
+                "progress": 40,
+                "status": "Planning",
+                "todos": [
+                    "Inventory preparation",
+                    "Seasonal website update",
+                    "Set up holiday discounts",
+                    "Plan holiday email series",
+                    "Organize charity event"
+                ]
+            },
+            {
+                "name": "Annual Customer Survey",
+                "progress": 25,
+                "status": "Planning",
+                "todos": [
+                    "Survey design",
+                    "Incentive plan for participants",
+                    "Distribution via email and social media",
+                    "Data collection setup",
+                    "Analysis tools selection"
+                ]
+            }
         ]
     },
-    {
-        "name": "Back to School",
-        "clientId": "4",
-        "progress": 90,
-        "status": "Completed",
-        "todos": [
-            "School supplies stock",
-            "Advertising to educational institutions",
-            "Discount pricing setup",
-            "Staff training for sales",
-            "Post-campaign analysis"
+    "4": {
+        "campaigns": [
+            {
+                "name": "Fitness Challenge",
+                "progress": 60,
+                "status": "Ongoing",
+                "todos": [
+                    "Develop mobile app features",
+                    "Collaborate with fitness influencers",
+                    "Organize virtual events",
+                    "Promotional content creation",
+                    "Community engagement strategies"
+                ]
+            },
+            {
+                "name": "Health & Wellness Webinar Series",
+                "progress": 35,
+                "status": "Planning",
+                "todos": [
+                    "Speaker selection",
+                    "Webinar platform setup",
+                    "Marketing through email and social",
+                    "Content topic planning",
+                    "Technical rehearsals"
+                ]
+            },
+            {
+                "name": "Nutrition Product Line Expansion",
+                "progress": 85,
+                "status": "Completed",
+                "todos": [
+                    "Market research on new products",
+                    "Formulation and testing",
+                    "Branding and packaging design",
+                    "Launch strategy development",
+                    "Post-launch customer feedback"
+                ]
+            }
         ]
     },
-    {
-        "name": "Black Friday",
-        "clientId": "5",
-        "progress": 30,
-        "status": "Planning",
-        "todos": [
-            "Early bird deals setup",
-            "Website capacity testing",
-            "Hiring seasonal employees",
-            "Collaborations with influencers",
-            "Email marketing campaigns"
+    "5": {
+        "campaigns": [
+            {
+                "name": "Luxury Goods Flash Sale",
+                "progress": 55,
+                "status": "Ongoing",
+                "todos": [
+                    "VIP customer notifications",
+                    "Exclusive product selection",
+                    "Flash sale webpage design",
+                    "High-value customer targeting",
+                    "Post-sale analytics review"
+                ]
+            },
+            {
+                "name": "Fashion Week Sponsorship",
+                "progress": 20,
+                "status": "Planning",
+                "todos": [
+                    "Select models and designers",
+                    "Arrange venue and logistics",
+                    "Develop promotional materials",
+                    "Plan VIP customer events",
+                    "Social media campaign for awareness"
+                ]
+            },
+            {
+                "name": "End-of-Year Clearance",
+                "progress": 80,
+                "status": "Completed",
+                "todos": [
+                    "Inventory analysis",
+                    "Discount strategy formulation",
+                    "Online and in-store signage",
+                    "Staff training for high traffic",
+                    "Customer feedback collection"
+                ]
+            }
         ]
     }
-]
+}

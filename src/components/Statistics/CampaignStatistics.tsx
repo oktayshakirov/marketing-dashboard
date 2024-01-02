@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
 import { Box, Flex, Stat, StatLabel, StatNumber, useColorModeValue } from "@chakra-ui/react";
+import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useState } from "react";
 
 interface CampaignData {
@@ -22,18 +23,24 @@ interface MiniStatisticsProps {
 
 const CampaignStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
     const [data, setData] = useState<StatisticsData>({ title: "", amount: "" });
+    const { selectedClient } = useClient();
     const iconTeal = useColorModeValue("#51F2BF", "#51F2BF");
     const textColor = useColorModeValue("gray.700", "white");
 
     useEffect(() => {
-        fetch("/fake/campaigns")
-            .then((response) => response.json())
-            .then((campaigns: CampaignData[]) => {
-                const calculatedData = calculateStatistics(keyName, campaigns);
-                setData(calculatedData);
-            })
-            .catch((error) => console.error("Error fetching data:", error));
-    }, [keyName]);
+        if (selectedClient && selectedClient.id) {
+            fetch("/fake/campaigns")
+                .then((response) => response.json())
+                .then((allCampaigns) => {
+                    const clientCampaigns = allCampaigns[selectedClient.id].campaigns;
+                    const calculatedData = calculateStatistics(keyName, clientCampaigns);
+                    setData(calculatedData);
+                })
+                .catch((error) => console.error("Error fetching data:", error));
+        } else {
+            setData({ title: "", amount: "" });
+        }
+    }, [keyName, selectedClient]);
 
     const iconWithSize = React.cloneElement(icon, { h: "24px", w: "24px" });
 

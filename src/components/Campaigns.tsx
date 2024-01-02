@@ -1,11 +1,11 @@
 import Card from "@/components/Card";
 import { CheckCircleIcon, SpinnerIcon, TimeIcon } from "@chakra-ui/icons";
 import { Box, Checkbox, Flex, Progress, Table, Tbody, Td, Text, Th, Thead, Tr, VStack } from "@chakra-ui/react";
+import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useRef, useState } from "react";
 
 interface CampaignData {
     name: string;
-    client: string;
     progress: number;
     status: string;
     todos: string[];
@@ -24,21 +24,30 @@ const getStatusIcon = (status: string) => {
 
 const CampaignsTable: React.FC = () => {
     const [campaigns, setCampaigns] = useState<CampaignData[]>([]);
-    const [selectedCampaign, setSelectedCampaign] = useState<number | null>(0);
+    const [selectedCampaign, setSelectedCampaign] = useState<number | null>(null);
     const [error, setError] = useState<string | null>(null);
     const detailsRefs = useRef<Array<HTMLTableRowElement | null>>([]);
+    const { selectedClient } = useClient();
 
     useEffect(() => {
-        fetch("/fake/campaigns")
-            .then((response) => response.json())
-            .then((data: CampaignData[]) => {
-                setCampaigns(data);
-            })
-            .catch((err) => {
-                console.error("Failed to load campaign data:", err);
-                setError("Failed to load campaign data.");
-            });
-    }, []);
+        if (selectedClient && selectedClient.id) {
+            fetch("/fake/campaigns")
+                .then((response) => response.json())
+                .then((allCampaigns) => {
+                    const clientCampaigns = allCampaigns[selectedClient.id]?.campaigns || [];
+                    setCampaigns(clientCampaigns);
+                    if (clientCampaigns.length > 0) {
+                        setSelectedCampaign(0);
+                    }
+                })
+                .catch((err) => {
+                    console.error("Failed to load campaign data:", err);
+                    setError("Failed to load campaign data.");
+                });
+        } else {
+            setCampaigns([]);
+        }
+    }, [selectedClient]);
 
     const handleViewDetails = (index: number) => {
         setSelectedCampaign(index === selectedCampaign ? null : index);
@@ -50,8 +59,10 @@ const CampaignsTable: React.FC = () => {
     };
 
     useEffect(() => {
-        detailsRefs.current[0]?.scrollIntoView({ behavior: "smooth" });
-    }, []);
+        if (selectedCampaign !== null) {
+            detailsRefs.current[selectedCampaign]?.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [selectedCampaign]);
 
     if (error) {
         return <Box>Error: {error}</Box>;
@@ -64,7 +75,6 @@ const CampaignsTable: React.FC = () => {
                     <Thead>
                         <Tr>
                             <Th>Campaign Name</Th>
-                            <Th>Client</Th>
                             <Th>Progress</Th>
                             <Th>Status</Th>
                             <Th>Details</Th>
@@ -75,7 +85,6 @@ const CampaignsTable: React.FC = () => {
                             <React.Fragment key={index}>
                                 <Tr>
                                     <Td>{campaign.name}</Td>
-                                    <Td>{campaign.client}</Td>
                                     <Td>
                                         <Progress
                                             value={campaign.progress}

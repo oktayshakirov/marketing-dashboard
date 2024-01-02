@@ -27,34 +27,34 @@ const Chat: React.FC = () => {
                             active
                             unreadCnt={3}
                         >
-                            <Avatar src="public\ogno.svg" name="Avatar" status="available" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="available" />
                         </Conversation>
                         <Conversation name="Darwin Wiranda" lastSenderName="Darwin" info="Hey there!">
-                            <Avatar src="public\ogno.svg" name="Avatar" status="away" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="away" />
                         </Conversation>
                         <Conversation name="Design" lastSenderName="Vasilis" info="Hello " unreadCnt={2}>
-                            <Avatar src="public\ogno.svg" name="Avatar" status="invisible" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
                         </Conversation>
                         <Conversation name="Marketing" lastSenderName="Alex" info="Test" unreadCnt={6}>
-                            <Avatar src="public\ogno.svg" name="Avatar" status="invisible" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
                         </Conversation>
                         <Conversation name="Vasilis K." lastSenderName="Oktay" info="What's up?">
-                            <Avatar src="public\ogno.svg" name="Avatar" status="dnd" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="dnd" />
                         </Conversation>
                         <Conversation name="Alex K." lastSenderName="Alex" info="Good morning">
-                            <Avatar src="public\ogno.svg" name="Avatar" status="invisible" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
                         </Conversation>
                         <Conversation name="Sophie" lastSenderName="Sophie" info="Hello">
-                            <Avatar src="public\ogno.svg" name="Avatar" status="invisible" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
                         </Conversation>
                         <Conversation name="Client" lastSenderName="Oktay" info="Good morning">
-                            <Avatar src="public\ogno.svg" name="Avatar" status="available" />
+                            <Avatar src="\ogno.svg" name="Avatar" status="available" />
                         </Conversation>
                     </ConversationList>
                 </Sidebar>
                 <ChatContainer>
                     <ConversationHeader>
-                        <Avatar src="public\ogno.svg" name="Vladi" />
+                        <Avatar src="\ogno.svg" name="Vladi" />
                         <ConversationHeader.Content userName="Vladi" info="Active now" />
                     </ConversationHeader>
                     <MessageList>
@@ -67,7 +67,7 @@ const Chat: React.FC = () => {
                                 position: "single",
                             }}
                         >
-                            <Avatar src="public\ogno.svg" name="Avatar" />
+                            <Avatar src="\ogno.svg" name="Avatar" />
                         </Message>
                         <Message
                             model={{
@@ -78,7 +78,7 @@ const Chat: React.FC = () => {
                                 position: "single",
                             }}
                         >
-                            <Avatar src="public\ogno.svg" name="Avatar" />
+                            <Avatar src="\ogno.svg" name="Avatar" />
                         </Message>
 
                         <Message
@@ -120,7 +120,7 @@ const Chat: React.FC = () => {
                                 position: "last",
                             }}
                         >
-                            <Avatar src="public\ogno.svg" name="Avatar" />
+                            <Avatar src="\ogno.svg" name="Avatar" />
                         </Message>
 
                         <TypingIndicator content="Vladi is typing" />

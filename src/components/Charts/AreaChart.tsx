@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import { Box, Heading } from "@chakra-ui/react";
-import { PureComponent } from "react";
+import { useClient } from "@contexts/useClientContext";
+import React, { useEffect, useState } from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 interface AreaChartData {
@@ -20,83 +21,75 @@ interface AreaChartProps {
     areaDataKey: string;
 }
 
-interface AreaChartState {
-    data: AreaChartData[];
-    title: string;
-    isLoading: boolean;
-    error: string | null;
-}
+const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => {
+    const [data, setData] = useState<AreaChartData[]>([]);
+    const [title, setTitle] = useState<string>("");
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
-export default class SimpleAreaChart extends PureComponent<AreaChartProps, AreaChartState> {
-    state: AreaChartState = {
-        data: [],
-        title: "",
-        isLoading: true,
-        error: null,
-    };
+    const { selectedClient } = useClient();
 
-    componentDidMount() {
-        fetch("/fake/charts")
-            .then((response) => response.json())
-            .then((allData: { [key: string]: ChartDataSet }) => {
-                const { keyName } = this.props;
-                const chartData = allData[keyName];
-                if (chartData) {
-                    this.transformData(chartData);
-                    this.setState({ title: chartData.title });
-                } else {
-                    this.setState({ error: `Data not found for keyName: ${keyName}`, isLoading: false });
-                }
-            })
-            .catch((error) => {
-                this.setState({ error: error.message, isLoading: false });
-            });
-    }
+    useEffect(() => {
+        const transformData = (chartData: ChartDataSet) => {
+            const transformedData = chartData.labels.map((label, index) => ({
+                name: label,
+                [areaDataKey]: chartData.data[index],
+                // data2: chartData.data2[index], // Uncomment if needed
+            }));
+            setData(transformedData);
+        };
 
-    transformData(chartData: ChartDataSet) {
-        const { areaDataKey } = this.props;
-        const transformedData = chartData.labels.map((label, index) => ({
-            name: label,
-            [areaDataKey]: chartData.data[index],
-            // data2: chartData.data2[index], // Uncomment if you want a second data series
-        }));
-        this.setState({ data: transformedData, isLoading: false });
-    }
-
-    renderChart(data: AreaChartData[], title: string) {
-        const { areaDataKey } = this.props;
-        return (
-            <Card width={{ base: "100%", md: "47%" }}>
-                <Box textAlign="center" mb="20px">
-                    <Heading as="h3" size="md">
-                        {title}
-                    </Heading>
-                </Box>
-                <ResponsiveContainer width="100%" height={300}>
-                    <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-                        <Area type="monotone" dataKey={areaDataKey} fill="#51F2BF" stroke="green" strokeWidth={3} />
-                        {/* <Area type="monotone" dataKey="data2" stroke="#82ca9d" fill="#82ca9d" /> */}
-                    </AreaChart>
-                </ResponsiveContainer>
-            </Card>
-        );
-    }
-
-    render() {
-        const { isLoading, error, data, title } = this.state;
-
-        if (isLoading) {
-            return <div>Loading...</div>;
+        if (selectedClient) {
+            fetch(`/fake/charts`)
+                .then((response) => response.json())
+                .then((allData) => {
+                    const clientData = allData[selectedClient.id];
+                    if (clientData && clientData.charts && clientData.charts[keyName]) {
+                        const chartData = clientData.charts[keyName];
+                        transformData(chartData);
+                        setTitle(chartData.title);
+                    } else {
+                        setError(`Data not found for keyName: ${keyName}`);
+                    }
+                })
+                .catch((error) => {
+                    setError(error.message);
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                });
         }
+    }, [selectedClient, keyName, areaDataKey]);
 
-        if (error) {
-            return <div>Error: {error}</div>;
-        }
+    const renderChart = () => (
+        <Card width={{ base: "100%", md: "47%" }}>
+            <Box textAlign="center" mb="20px">
+                <Heading as="h3" size="md">
+                    {title}
+                </Heading>
+            </Box>
+            <ResponsiveContainer width="100%" height={300}>
+                <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Area type="monotone" dataKey={areaDataKey} fill="#51F2BF" stroke="green" strokeWidth={3} />
+                    {/* <Area type="monotone" dataKey="data2" stroke="#82ca9d" fill="#82ca9d" /> */}
+                </AreaChart>
+            </ResponsiveContainer>
+        </Card>
+    );
 
-        return data.length > 0 ? this.renderChart(data, title) : <div>No data available.</div>;
+    if (isLoading) {
+        return <div>Loading...</div>;
     }
-}
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    return data.length > 0 ? renderChart() : <div>No data available.</div>;
+};
+
+export default SimpleAreaChart;

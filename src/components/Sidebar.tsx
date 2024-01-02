@@ -99,7 +99,7 @@ const Sidebar: React.FC = () => {
                             <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                             <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
                             <SidebarLink icon={<SettingsIcon />} to="/settings" children="Settings" />
-                            <SidebarLink icon={<ExternalLinkIcon />} to="/signout" children="Sign out" />
+                            <SidebarLink icon={<ExternalLinkIcon />} to="/" children="Sign out" />
                         </VStack>
                     </DrawerBody>
                 </DrawerContent>

@@ -1,6 +1,7 @@
 import Card from "@/components/Card";
 import { Box, Heading } from "@chakra-ui/react";
-import { PureComponent } from "react";
+import { useClient } from "@contexts/useClientContext";
+import React, { useEffect, useState } from "react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
 interface BarChartData {
@@ -8,96 +9,78 @@ interface BarChartData {
     [key: string]: string | number;
 }
 
-interface ChartDataSet {
-    title: string;
-    labels: string[];
-    data: number[];
-    // data2: number[]; // Uncomment if you want a second data series
-}
-
 interface BarChartProps {
     keyName: string;
     barDataKey: string;
 }
 
-interface BarChartState {
-    data: BarChartData[];
-    title: string;
-    isLoading: boolean;
-    error: string | null;
-}
+const SimpleBarChart: React.FC<BarChartProps> = ({ keyName, barDataKey }) => {
+    const [data, setData] = useState<BarChartData[]>([]);
+    const [title, setTitle] = useState<string>("");
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
-export default class SimpleBarChart extends PureComponent<BarChartProps, BarChartState> {
-    state: BarChartState = {
-        data: [],
-        title: "",
-        isLoading: true,
-        error: null,
-    };
+    const { selectedClient } = useClient();
 
-    componentDidMount() {
-        fetch("/fake/charts")
-            .then((response) => response.json())
-            .then((allData: { [key: string]: ChartDataSet }) => {
-                const { keyName } = this.props;
-                const chartData = allData[keyName];
-                if (chartData) {
-                    this.transformData(chartData);
-                    this.setState({ title: chartData.title });
-                } else {
-                    this.setState({ error: `Data not found for keyName: ${keyName}`, isLoading: false });
-                }
-            })
-            .catch((error) => {
-                this.setState({ error: error.message, isLoading: false });
-            });
-    }
-
-    transformData(chartData: ChartDataSet) {
-        const { barDataKey } = this.props;
-        const transformedData = chartData.labels.map((label, index) => ({
-            name: label,
-            [barDataKey]: chartData.data[index],
-            // data2: chartData.data2[index], // Uncomment if you want a second data series
-        }));
-        this.setState({ data: transformedData, isLoading: false });
-    }
-
-    renderChart(data: BarChartData[], title: string) {
-        const { barDataKey } = this.props;
-        return (
-            <Card width={{ base: "100%", md: "47%" }}>
-                <Box textAlign="center" mb="20px">
-                    <Heading as="h3" size="md">
-                        {title}
-                    </Heading>
-                </Box>
-                <ResponsiveContainer width="100%" height={300}>
-                    <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="name" />
-                        <YAxis />
-                        <Tooltip />
-
-                        <Bar dataKey={barDataKey} fill="#51F2BF" stroke="#51F2BF" />
-                        {/* <Bar dataKey="data2" fill="#82ca9d" /> */}
-                    </BarChart>
-                </ResponsiveContainer>
-            </Card>
-        );
-    }
-
-    render() {
-        const { isLoading, error, data, title } = this.state;
-
-        if (isLoading) {
-            return <div>Loading...</div>;
+    useEffect(() => {
+        if (selectedClient) {
+            fetch(`/fake/charts`)
+                .then((response) => response.json())
+                .then((allData) => {
+                    const clientData = allData[selectedClient.id];
+                    if (clientData && clientData.charts && clientData.charts[keyName]) {
+                        const chartData = clientData.charts[keyName];
+                        const transformedData = chartData.labels.map((label: string, index: number) => ({
+                            name: label,
+                            [barDataKey]: chartData.data[index],
+                            // Uncomment the line below if 'data2' is used
+                            // data2: chartData.data2 ? chartData.data2[index] : null,
+                        }));
+                        setData(transformedData);
+                        setTitle(chartData.title);
+                    } else {
+                        setError(`Data not found for keyName: ${keyName}`);
+                    }
+                })
+                .catch((error) => {
+                    setError(error.message);
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                });
         }
+    }, [selectedClient, keyName, barDataKey]);
 
-        if (error) {
-            return <div>Error: {error}</div>;
-        }
+    const renderChart = () => (
+        <Card width={{ base: "100%", md: "47%" }}>
+            <Box textAlign="center" mb="20px">
+                <Heading as="h3" size="md">
+                    {title}
+                </Heading>
+            </Box>
+            <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey={barDataKey} fill="#51F2BF" stroke="#51F2BF" />
+                    {/* Uncomment the line below if 'data2' is used */}
+                    {/* <Bar dataKey="data2" fill="#82ca9d" /> */}
+                </BarChart>
+            </ResponsiveContainer>
+        </Card>
+    );
 
-        return data.length > 0 ? this.renderChart(data, title) : <div>No data available.</div>;
+    if (isLoading) {
+        return <div>Loading....</div>;
     }
-}
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    return data.length > 0 ? renderChart() : <div>No data available.</div>;
+};
+
+export default SimpleBarChart;

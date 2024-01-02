@@ -1,5 +1,6 @@
 import ErrorBoundary from "@components/ErrorBoundary";
 import FullscreenLoader from "@components/FullscreenLoader";
+import ClientProvider from "@contexts/ClientProvider";
 import React, { Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Analytics from "./Analytics";
@@ -74,7 +75,11 @@ const App: React.FC = () => {
             ],
         },
     ]);
-    return <RouterProvider router={router} fallbackElement={<FullscreenLoader />} />;
+    return (
+        <ClientProvider>
+            <RouterProvider router={router} fallbackElement={<FullscreenLoader />} />;
+        </ClientProvider>
+    );
 };
 
 export default App;
