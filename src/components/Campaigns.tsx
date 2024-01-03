@@ -1,6 +1,20 @@
 import Card from "@/components/Card";
-import { CheckCircleIcon, SpinnerIcon, TimeIcon } from "@chakra-ui/icons";
-import { Box, Checkbox, Flex, Progress, Table, Tbody, Td, Text, Th, Thead, Tr, VStack } from "@chakra-ui/react";
+import { CheckCircleIcon, DeleteIcon, EditIcon, SpinnerIcon, TimeIcon } from "@chakra-ui/icons";
+import {
+    Box,
+    Checkbox,
+    Flex,
+    IconButton,
+    Progress,
+    Table,
+    Tbody,
+    Td,
+    Text,
+    Th,
+    Thead,
+    Tr,
+    VStack,
+} from "@chakra-ui/react";
 import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useRef, useState } from "react";
 
@@ -25,9 +39,18 @@ const getStatusIcon = (status: string) => {
 const CampaignsTable: React.FC = () => {
     const [campaigns, setCampaigns] = useState<CampaignData[]>([]);
     const [selectedCampaign, setSelectedCampaign] = useState<number | null>(null);
-    const [error, setError] = useState<string | null>(null);
     const detailsRefs = useRef<Array<HTMLTableRowElement | null>>([]);
     const { selectedClient } = useClient();
+
+    // Function for handling edit (placeholder)
+    const handleEdit = (campaignName: string) => {
+        console.log("Edit clicked for:", campaignName);
+    };
+
+    // Function for handling delete (placeholder)
+    const handleDelete = (campaignName: string) => {
+        console.log("Delete clicked for:", campaignName);
+    };
 
     useEffect(() => {
         if (selectedClient && selectedClient.id) {
@@ -40,10 +63,7 @@ const CampaignsTable: React.FC = () => {
                         setSelectedCampaign(0);
                     }
                 })
-                .catch((err) => {
-                    console.error("Failed to load campaign data:", err);
-                    setError("Failed to load campaign data.");
-                });
+                .catch((err) => console.error("Failed to load campaign data:", err));
         } else {
             setCampaigns([]);
         }
@@ -57,16 +77,6 @@ const CampaignsTable: React.FC = () => {
             }, 100);
         }
     };
-
-    useEffect(() => {
-        if (selectedCampaign !== null) {
-            detailsRefs.current[selectedCampaign]?.scrollIntoView({ behavior: "smooth" });
-        }
-    }, [selectedCampaign]);
-
-    if (error) {
-        return <Box>Error: {error}</Box>;
-    }
 
     return (
         <Card overflowX={{ sm: "scroll", xl: "hidden" }}>
@@ -84,7 +94,26 @@ const CampaignsTable: React.FC = () => {
                         {campaigns.map((campaign, index) => (
                             <React.Fragment key={index}>
                                 <Tr>
-                                    <Td>{campaign.name}</Td>
+                                    <Td>
+                                        <Flex alignItems="center" justifyContent="space-between">
+                                            <Text>{campaign.name}</Text>
+                                            <Flex>
+                                                <IconButton
+                                                    aria-label="Edit"
+                                                    icon={<EditIcon />}
+                                                    size="sm"
+                                                    onClick={() => handleEdit(campaign.name)}
+                                                    mr={2}
+                                                />
+                                                <IconButton
+                                                    aria-label="Delete"
+                                                    icon={<DeleteIcon />}
+                                                    size="sm"
+                                                    onClick={() => handleDelete(campaign.name)}
+                                                />
+                                            </Flex>
+                                        </Flex>
+                                    </Td>
                                     <Td>
                                         <Progress
                                             value={campaign.progress}

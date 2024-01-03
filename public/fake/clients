@@ -1,22 +1,27 @@
 [
     {
         "id": "1",
-        "name": "Bayer AskMed"
+        "name": "Bayer AskMed",
+        "description": "Bayer AskMed is at the forefront of healthcare innovation, specializing in providing cutting-edge medical solutions and pharmaceuticals. Their commitment to research and development has positioned them as a leader in advancing medical science and patient care."
     },
     {
         "id": "2",
-        "name": "XYZ Inc"
+        "name": "XYZ Inc",
+        "description": "XYZ Inc is a dynamic tech company known for its creative approach to software development and digital transformation. They are pioneers in developing AI-driven applications and have a strong focus on leveraging technology to drive business efficiency and growth."
     },
     {
         "id": "3",
-        "name": "123 Retail"
+        "name": "123 Retail",
+        "description": "123 Retail is a nationwide retail chain, offering a wide range of products from everyday essentials to high-end electronics. Known for their exceptional customer service, they prioritize a seamless shopping experience both in-store and online."
     },
     {
         "id": "4",
-        "name": "Education Ltd"
+        "name": "Education Ltd",
+        "description": "Education Ltd is dedicated to revolutionizing the educational landscape. They specialize in creating engaging, technology-enhanced learning materials and platforms that cater to the modern needs of educators and students alike."
     },
     {
         "id": "5",
-        "name": "Hurom GmbH"
+        "name": "Hurom GmbH",
+        "description": "Hurom GmbH is an industry leader in health and wellness products, particularly known for their innovative juicers and health appliances. Their commitment to quality and sustainability has made them a favorite among health-conscious consumers."
     }
 ]

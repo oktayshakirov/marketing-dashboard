@@ -3,6 +3,7 @@ import { createContext } from "react";
 export interface Client {
     id: string;
     name: string;
+    description: string;
 }
 
 interface ClientContextType {
