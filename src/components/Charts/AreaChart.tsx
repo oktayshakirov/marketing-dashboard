@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Flex, FormLabel, Heading, Input } from "@chakra-ui/react";
 import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useState } from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
@@ -26,6 +26,8 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
     const [title, setTitle] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const [selectedStartDate, setSelectedStartDate] = useState<string | null>(null);
+    const [selectedEndDate, setSelectedEndDate] = useState<string | null>(null);
 
     const { selectedClient } = useClient();
 
@@ -61,6 +63,26 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
         }
     }, [selectedClient, keyName, areaDataKey]);
 
+    const handleStartDateChange = (date: string) => {
+        setSelectedStartDate(date);
+    };
+
+    const handleEndDateChange = (date: string) => {
+        setSelectedEndDate(date);
+    };
+
+    const filterDataByDateRange = () => {
+        if (selectedStartDate && selectedEndDate) {
+            const filteredData = data.filter(
+                (item) =>
+                    new Date(item.name) >= new Date(selectedStartDate) &&
+                    new Date(item.name) <= new Date(selectedEndDate),
+            );
+            return filteredData;
+        }
+        return data;
+    };
+
     const renderChart = () => (
         <Card width={{ base: "100%", md: "47%" }}>
             <Box textAlign="center" mb="20px">
@@ -68,8 +90,36 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
                     {title}
                 </Heading>
             </Box>
+            <Box mb="5" display="flex" justifyContent="center">
+                <Flex>
+                    <FormLabel htmlFor="startDate" style={{ fontSize: "19px" }}>
+                        Start:
+                    </FormLabel>
+                    <Input
+                        type="date"
+                        id="startDate"
+                        onChange={(e) => handleStartDateChange(e.target.value)}
+                        value={selectedStartDate || ""}
+                        style={{ border: "1px solid #ccc", borderRadius: "4px" }}
+                        size="sm"
+                    />
+                </Flex>
+                <Flex>
+                    <FormLabel htmlFor="endDate" style={{ marginLeft: "10px", fontSize: "19px" }}>
+                        End:
+                    </FormLabel>
+                    <Input
+                        type="date"
+                        id="endDate"
+                        onChange={(e) => handleEndDateChange(e.target.value)}
+                        value={selectedEndDate || ""}
+                        style={{ border: "1px solid #ccc", borderRadius: "4px" }}
+                        size="sm"
+                    />
+                </Flex>
+            </Box>
             <ResponsiveContainer width="100%" height={300}>
-                <AreaChart data={data} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
+                <AreaChart data={filterDataByDateRange()} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
