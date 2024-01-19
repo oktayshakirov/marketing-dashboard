@@ -3,7 +3,9 @@ import { createContext } from "react";
 export interface Client {
     id: string;
     name: string;
-    description: string;
+    description?: string;
+    phoneNumber?: string;
+    email?: string;
 }
 
 interface ClientContextType {

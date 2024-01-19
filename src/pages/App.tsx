@@ -11,6 +11,7 @@ import Chat from "./Chat";
 import Files from "./Files";
 import MainLayout from "./MainLayout";
 import Overview from "./Overview";
+import Profile from "./Profile";
 import Settings from "./Settings";
 import Summary from "./Summary";
 import Users from "./Users";
@@ -55,6 +56,10 @@ const App: React.FC = () => {
                 {
                     path: "files",
                     element: <Files />,
+                },
+                {
+                    path: "profile",
+                    element: <Profile />,
                 },
                 {
                     path: "settings",

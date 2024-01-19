@@ -2,26 +2,57 @@
     {
         "id": "1",
         "name": "Bayer AskMed",
-        "description": "Bayer AskMed is at the forefront of healthcare innovation, specializing in providing cutting-edge medical solutions and pharmaceuticals. Their commitment to research and development has positioned them as a leader in advancing medical science and patient care."
+        "description": "Bayer AskMed is at the forefront of healthcare innovation, specializing in providing cutting-edge medical solutions and pharmaceuticals. Their commitment to research and development has positioned them as a leader in advancing medical science and patient care.",
+        "phoneNumber": "+1234567890",
+        "email": "askmed@bayer.com"
     },
     {
         "id": "2",
         "name": "XYZ Inc",
-        "description": "XYZ Inc is a dynamic tech company known for its creative approach to software development and digital transformation. They are pioneers in developing AI-driven applications and have a strong focus on leveraging technology to drive business efficiency and growth."
+        "description": "XYZ Inc is a dynamic tech company known for its creative approach to software development and digital transformation. They are pioneers in developing AI-driven applications and have a strong focus on leveraging technology to drive business efficiency and growth.",
+        "phoneNumber": "+9876543210",
+        "email": "info@xyzinc.com"
     },
     {
         "id": "3",
         "name": "123 Retail",
-        "description": "123 Retail is a nationwide retail chain, offering a wide range of products from everyday essentials to high-end electronics. Known for their exceptional customer service, they prioritize a seamless shopping experience both in-store and online."
+        "description": "123 Retail is a nationwide retail chain, offering a wide range of products from everyday essentials to high-end electronics. Known for their exceptional customer service, they prioritize a seamless shopping experience both in-store and online.",
+        "phoneNumber": "+1122334455",
+        "email": "customerservice@123retail.com"
     },
     {
         "id": "4",
         "name": "Education Ltd",
-        "description": "Education Ltd is dedicated to revolutionizing the educational landscape. They specialize in creating engaging, technology-enhanced learning materials and platforms that cater to the modern needs of educators and students alike."
+        "description": "Education Ltd is dedicated to revolutionizing the educational landscape. They specialize in creating engaging, technology-enhanced learning materials and platforms that cater to the modern needs of educators and students alike.",
+        "phoneNumber": "+9988776655",
+        "email": "info@educationltd.com"
     },
     {
         "id": "5",
         "name": "Hurom GmbH",
-        "description": "Hurom GmbH is an industry leader in health and wellness products, particularly known for their innovative juicers and health appliances. Their commitment to quality and sustainability has made them a favorite among health-conscious consumers."
+        "description": "Hurom GmbH is an industry leader in health and wellness products, particularly known for their innovative juicers and health appliances. Their commitment to quality and sustainability has made them a favorite among health-conscious consumers.",
+        "phoneNumber": "+1123456789",
+        "email": "support@hurom.com"
+    },
+    {
+        "id": "6",
+        "name": "Tech Innovators",
+        "description": "Tech Innovators is a startup specializing in cutting-edge technologies. They aim to disrupt traditional industries through innovation and creative problem-solving.",
+        "phoneNumber": "+1122334466",
+        "email": "info@techinnovators.com"
+    },
+    {
+        "id": "7",
+        "name": "Green Eco Solutions",
+        "description": "Green Eco Solutions focuses on providing sustainable solutions for environmental challenges. They offer eco-friendly products and consulting services to promote a greener planet.",
+        "phoneNumber": "+1122334477",
+        "email": "info@greeneco.com"
+    },
+    {
+        "id": "8",
+        "name": "Global Logistics Group",
+        "description": "Global Logistics Group is a multinational company providing comprehensive logistics and supply chain solutions. They specialize in efficient transportation and warehouse management.",
+        "phoneNumber": "+1122334488",
+        "email": "info@globallogistics.com"
     }
 ]

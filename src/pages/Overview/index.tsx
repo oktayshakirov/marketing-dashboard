@@ -8,20 +8,22 @@ const Overview = () => {
     const { selectedClient } = useClient();
     const [clientMessage, setClientMessage] = useState("");
     const [clientDescription, setClientDescription] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState<string | null>(null);
+    const [email, setEmail] = useState<string | null>(null);
 
     useEffect(() => {
         if (selectedClient) {
             setClientMessage(`You are currently reviewing the data for ${selectedClient.name}.`);
             setClientDescription(selectedClient.description || "No description available.");
+            setPhoneNumber(selectedClient.phoneNumber || null);
+            setEmail(selectedClient.email || null);
         } else {
             setClientMessage("Select a client to view their data.");
             setClientDescription("");
+            setPhoneNumber(null);
+            setEmail(null);
         }
     }, [selectedClient]);
-
-    // Placeholder values for phone number and email
-    const phoneNumber = "+123 456 7890";
-    const email = "client@example.com";
 
     return (
         <Card>
@@ -29,16 +31,17 @@ const Overview = () => {
                 <Text fontSize="2xl">{clientMessage}</Text>
                 <Text fontSize="md">{clientDescription}</Text>
 
-                {/* Placeholder for Client Contact Information */}
-                <Box borderWidth="1px" borderRadius="lg" p={3} w="full">
-                    <Text fontWeight="bold">Contact Information:</Text>
-                    <Text>Phone: {phoneNumber}</Text>
-                    <Text>Email: {email}</Text>
-                </Box>
+                {/* Client Contact Information */}
+                {phoneNumber || email ? (
+                    <Box borderWidth="1px" borderRadius="lg" p={3} w="full">
+                        <Text fontWeight="bold">Contact Information:</Text>
+                        {phoneNumber && <Text>Phone: {phoneNumber}</Text>}
+                        {email && <Text>Email: {email}</Text>}
+                    </Box>
+                ) : null}
 
                 {/* Placeholder for Client Images */}
                 <HStack spacing="4">
-                    {" "}
                     {/* Adjust spacing as needed */}
                     <Image src="https://via.placeholder.com/250" alt="Client Logo" />
                     <Image src="https://via.placeholder.com/250" alt="Client Logo" />

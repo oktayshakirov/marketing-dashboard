@@ -1,8 +1,9 @@
-import { BellIcon, ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
+import { BellIcon, ChevronDownIcon, ExternalLinkIcon, SettingsIcon, ViewIcon } from "@chakra-ui/icons";
 import {
     Avatar,
     Box,
     Button,
+    Divider,
     Flex,
     IconButton,
     Menu,
@@ -16,6 +17,7 @@ import FullscreenLoader from "@components/FullscreenLoader";
 import { useClient } from "@contexts/useClientContext";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [clients, setClients] = useState<{ id: string; name: string }[]>([]);
@@ -106,17 +108,20 @@ const Header = () => {
                 {/* Right Side: User Info and Notifications */}
                 <Flex alignItems="center">
                     {/* Avatar and User */}
-                    <Flex alignItems="center" mr="2">
-                        <Avatar name={user.name} mr="1" />
-                        <Flex direction="column" alignItems="flex-start" ml="1">
-                            <Text noOfLines={1} fontWeight="bold">
-                                {user.name}
-                            </Text>
-                            <Text fontSize="sm" color="gray.500" noOfLines={1}>
-                                {user.role}
-                            </Text>
+
+                    <Link to="/profile">
+                        <Flex alignItems="center" mr="2">
+                            <Avatar name={user.name} mr="1" />
+                            <Flex direction="column" alignItems="flex-start" ml="1">
+                                <Text noOfLines={1} fontWeight="bold">
+                                    {user.name}
+                                </Text>
+                                <Text fontSize="sm" color="gray.500" noOfLines={1}>
+                                    {user.role}
+                                </Text>
+                            </Flex>
                         </Flex>
-                    </Flex>
+                    </Link>
 
                     {/* Settings Menu */}
                     <Menu>
@@ -132,9 +137,16 @@ const Header = () => {
                             <SettingsIcon w={5} h={5} />
                         </MenuButton>
                         <MenuList>
-                            <MenuItem>Profile</MenuItem>
-                            <MenuItem>Settings</MenuItem>
-                            <MenuItem>Logout</MenuItem>
+                            <MenuItem as={Link} to="/profile" icon={<ViewIcon />}>
+                                Profile
+                            </MenuItem>
+                            <MenuItem as={Link} to="/settings" icon={<SettingsIcon />}>
+                                Settings
+                            </MenuItem>
+                            <Divider />
+                            <MenuItem as={Link} to="/signout" icon={<ExternalLinkIcon />}>
+                                Sign Out
+                            </MenuItem>
                         </MenuList>
                     </Menu>
 

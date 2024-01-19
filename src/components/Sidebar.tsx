@@ -21,6 +21,7 @@ import {
     DrawerOverlay,
     IconButton,
     Image,
+    Link,
     VStack,
     useColorModeValue,
     useDisclosure,
@@ -98,6 +99,7 @@ const Sidebar: React.FC = () => {
                             <SidebarLink icon={<AttachmentIcon />} to="/summary" children="Summary" />
                             <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                             <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
+                            <SidebarLink icon={<ViewIcon />} to="/profile" children="Profile" />
                             <SidebarLink icon={<SettingsIcon />} to="/settings" children="Settings" />
                             <SidebarLink icon={<ExternalLinkIcon />} to="/" children="Sign out" />
                         </VStack>
@@ -114,10 +116,12 @@ const Sidebar: React.FC = () => {
                 bg="#f7f8f9"
                 display={{ base: "none", md: "block" }}
             >
-                <Box marginBottom="6" paddingX="3">
-                    <Image src="/ogno.svg" alt="Ogno Logo" />
-                </Box>
-                <VStack align="stretch" spacing="3">
+                <Link href="/" _hover={{ textDecoration: "none" }}>
+                    <Box marginBottom="6" paddingX="3">
+                        <Image src="/ogno.svg" alt="Ogno Logo" />
+                    </Box>
+                </Link>
+                <VStack align="stretch" spacing="4">
                     <SidebarLink icon={<ViewIcon />} to="/" children="Overview" />
                     <SidebarLink icon={<SpinnerIcon />} to="/analytics" children="Analytics" />
                     <SidebarLink icon={<TimeIcon />} to="/campaigns" children="Campaigns" />
@@ -128,8 +132,7 @@ const Sidebar: React.FC = () => {
                     <SidebarLink icon={<AttachmentIcon />} to="/summary" children="Summary" />
                     <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                     <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
-                    <SidebarLink icon={<SettingsIcon />} to="/settings" children="Settings" />
-                    <SidebarLink icon={<ExternalLinkIcon />} to="/signout" children="Sign out" />
+                    <SidebarLink icon={<ViewIcon />} to="/profile" children="Profile" />
                 </VStack>
             </Box>
         </>
