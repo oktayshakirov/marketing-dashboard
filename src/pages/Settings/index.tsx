@@ -16,19 +16,22 @@ const Settings: React.FC = () => {
 
                 <VStack spacing={8} align="start">
                     <FormControl>
+                        <FormLabel htmlFor="theme">Theme</FormLabel>
+                        <Select id="theme" placeholder="Select Theme">
+                            <option value="utc">Light</option>
+                            <option value="est">Dark</option>
+                            <option value="pst">Green</option>
+                            <option value="pst">Blue</option>
+                            <option value="pst">Red</option>
+                        </Select>
+                    </FormControl>
+
+                    <FormControl>
                         <FormLabel htmlFor="timezone">Timezone</FormLabel>
                         <Select id="timezone" placeholder="Select timezone">
                             <option value="utc">UTC</option>
                             <option value="est">EST</option>
                             <option value="pst">PST</option>
-                        </Select>
-                    </FormControl>
-
-                    <FormControl>
-                        <FormLabel htmlFor="theme">Theme</FormLabel>
-                        <Select id="theme" placeholder="Select theme">
-                            <option value="light">Light</option>
-                            <option value="dark">Dark</option>
                         </Select>
                     </FormControl>
 

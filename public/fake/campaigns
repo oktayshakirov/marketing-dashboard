@@ -183,42 +183,122 @@
             }
         ]
     },
-    "5": {
+    "6": {
         "campaigns": [
             {
-                "name": "Luxury Goods Flash Sale",
-                "progress": 55,
-                "status": "Ongoing",
+                "name": "Summer Outdoor Adventure Gear Sale",
+                "progress": 40,
+                "status": "In Progress",
                 "todos": [
-                    "VIP customer notifications",
-                    "Exclusive product selection",
-                    "Flash sale webpage design",
-                    "High-value customer targeting",
-                    "Post-sale analytics review"
+                    "Curate outdoor gear collection",
+                    "Design promotional banners",
+                    "Create engaging social media content",
+                    "Implement email marketing campaign",
+                    "Collaborate with influencers for reviews"
                 ]
             },
             {
-                "name": "Fashion Week Sponsorship",
-                "progress": 20,
+                "name": "Tech Innovation Expo",
+                "progress": 10,
                 "status": "Planning",
                 "todos": [
-                    "Select models and designers",
-                    "Arrange venue and logistics",
-                    "Develop promotional materials",
-                    "Plan VIP customer events",
-                    "Social media campaign for awareness"
+                    "Identify keynote speakers",
+                    "Secure event venue and logistics",
+                    "Design booth layout and promotional materials",
+                    "Coordinate media coverage",
+                    "Create pre-event buzz on social media"
                 ]
             },
             {
-                "name": "End-of-Year Clearance",
-                "progress": 80,
-                "status": "Completed",
+                "name": "Back-to-School Campaign",
+                "progress": 5,
+                "status": "Planning",
                 "todos": [
-                    "Inventory analysis",
-                    "Discount strategy formulation",
-                    "Online and in-store signage",
-                    "Staff training for high traffic",
-                    "Customer feedback collection"
+                    "Research popular back-to-school trends",
+                    "Develop targeted promotions for students and parents",
+                    "Collaborate with schools for partnerships",
+                    "Create engaging content for educational influencers",
+                    "Plan online and in-store events"
+                ]
+            }
+        ]
+    },
+    "7": {
+        "campaigns": [
+            {
+                "name": "Holiday Gift Guide",
+                "progress": 15,
+                "status": "Planning",
+                "todos": [
+                    "Identify trending holiday gifts",
+                    "Curate a diverse gift selection",
+                    "Design visually appealing gift guide",
+                    "Implement email and social media promotion",
+                    "Collaborate with influencers for gift recommendations"
+                ]
+            },
+            {
+                "name": "Wellness Month",
+                "progress": 5,
+                "status": "Planning",
+                "todos": [
+                    "Select wellness products and services",
+                    "Design wellness-themed marketing materials",
+                    "Create social media challenges",
+                    "Collaborate with health influencers",
+                    "Plan in-store wellness events"
+                ]
+            },
+            {
+                "name": "Customer Appreciation Week",
+                "progress": 2,
+                "status": "Planning",
+                "todos": [
+                    "Design special discounts for loyal customers",
+                    "Create personalized thank-you emails",
+                    "Plan exclusive in-store events",
+                    "Launch a social media gratitude campaign",
+                    "Prepare customer appreciation gifts"
+                ]
+            }
+        ]
+    },
+    "8": {
+        "campaigns": [
+            {
+                "name": "Eco-Friendly Product Launch",
+                "progress": 8,
+                "status": "Planning",
+                "todos": [
+                    "Research sustainable product options",
+                    "Design eco-friendly packaging",
+                    "Create an educational campaign on environmental impact",
+                    "Collaborate with eco-conscious influencers",
+                    "Plan a virtual launch event"
+                ]
+            },
+            {
+                "name": "Summer Fitness Challenge",
+                "progress": 3,
+                "status": "Planning",
+                "todos": [
+                    "Develop fitness challenge guidelines",
+                    "Create engaging workout content",
+                    "Collaborate with fitness influencers",
+                    "Launch a social media fitness challenge",
+                    "Offer special discounts on fitness products"
+                ]
+            },
+            {
+                "name": "Digital Learning Workshop Series",
+                "progress": 0,
+                "status": "Planning",
+                "todos": [
+                    "Identify relevant workshop topics",
+                    "Select expert speakers",
+                    "Create promotional materials for workshops",
+                    "Plan online registration process",
+                    "Promote the workshops through various channels"
                 ]
             }
         ]

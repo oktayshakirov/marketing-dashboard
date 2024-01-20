@@ -1,11 +1,9 @@
-import { BellIcon, ChevronDownIcon, ExternalLinkIcon, SettingsIcon, ViewIcon } from "@chakra-ui/icons";
+import { ChevronDownIcon, ExternalLinkIcon, SettingsIcon, ViewIcon } from "@chakra-ui/icons";
 import {
     Avatar,
-    Box,
     Button,
     Divider,
     Flex,
-    IconButton,
     Menu,
     MenuButton,
     MenuItem,
@@ -14,6 +12,7 @@ import {
     useColorModeValue,
 } from "@chakra-ui/react";
 import FullscreenLoader from "@components/FullscreenLoader";
+import Notifications from "@components/Notifications";
 import { useClient } from "@contexts/useClientContext";
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
@@ -22,7 +21,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
     const [clients, setClients] = useState<{ id: string; name: string }[]>([]);
     const [user, setUser] = useState({ name: "", role: "" });
-    const [notificationCount, setNotificationCount] = useState(0);
+
     const [isLoading, setIsLoading] = useState(true);
     const { selectedClient, setSelectedClient } = useClient();
 
@@ -45,7 +44,7 @@ const Header = () => {
         const notificationsUrl = `${import.meta.env.VITE_BACKEND_URL}/notifications`;
 
         try {
-            const [usersResponse, clientsResponse, notificationsResponse] = await Promise.all([
+            const [usersResponse, clientsResponse] = await Promise.all([
                 axios.get(usersUrl),
                 axios.get(clientsUrl),
                 axios.get(notificationsUrl),
@@ -63,8 +62,6 @@ const Header = () => {
             } else {
                 console.error("Current user not found in the list");
             }
-
-            setNotificationCount(notificationsResponse.data.count);
         } catch (error) {
             console.error("Error loading data:", error);
         } finally {
@@ -131,7 +128,6 @@ const Header = () => {
                             rightIcon={<ChevronDownIcon />}
                             _hover={{
                                 bg: hoverBg,
-                                boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
                             }}
                         >
                             <SettingsIcon w={5} h={5} />
@@ -152,30 +148,7 @@ const Header = () => {
 
                     {/* Notifications */}
                     <Flex position="relative" alignItems="center" mr="4">
-                        <IconButton
-                            icon={<BellIcon w={6} h={6} />}
-                            variant="ghost"
-                            aria-label="Notifications"
-                            _hover={{
-                                bg: hoverBg,
-                                boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
-                            }}
-                        />
-                        {notificationCount > 0 && (
-                            <Box
-                                position="absolute"
-                                top="-1"
-                                right="1"
-                                px={1}
-                                fontSize="xs"
-                                fontWeight="bold"
-                                color="white"
-                                bg="red.500"
-                                borderRadius="full"
-                            >
-                                {notificationCount}
-                            </Box>
-                        )}
+                        <Notifications />
                     </Flex>
                 </Flex>
             </Flex>
