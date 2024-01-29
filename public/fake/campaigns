@@ -183,7 +183,7 @@
             }
         ]
     },
-    "6": {
+    "5": {
         "campaigns": [
             {
                 "name": "Summer Outdoor Adventure Gear Sale",
@@ -223,7 +223,7 @@
             }
         ]
     },
-    "7": {
+    "6": {
         "campaigns": [
             {
                 "name": "Holiday Gift Guide",
@@ -263,7 +263,7 @@
             }
         ]
     },
-    "8": {
+    "7": {
         "campaigns": [
             {
                 "name": "Eco-Friendly Product Launch",
@@ -299,6 +299,46 @@
                     "Create promotional materials for workshops",
                     "Plan online registration process",
                     "Promote the workshops through various channels"
+                ]
+            }
+        ]
+    },
+    "8": {
+        "campaigns": [
+            {
+                "name": "Fitness Challenge",
+                "progress": 60,
+                "status": "Ongoing",
+                "todos": [
+                    "Develop mobile app features",
+                    "Collaborate with fitness influencers",
+                    "Organize virtual events",
+                    "Promotional content creation",
+                    "Community engagement strategies"
+                ]
+            },
+            {
+                "name": "Health & Wellness Webinar Series",
+                "progress": 35,
+                "status": "Planning",
+                "todos": [
+                    "Speaker selection",
+                    "Webinar platform setup",
+                    "Marketing through email and social",
+                    "Content topic planning",
+                    "Technical rehearsals"
+                ]
+            },
+            {
+                "name": "Nutrition Product Line Expansion",
+                "progress": 85,
+                "status": "Completed",
+                "todos": [
+                    "Market research on new products",
+                    "Formulation and testing",
+                    "Branding and packaging design",
+                    "Launch strategy development",
+                    "Post-launch customer feedback"
                 ]
             }
         ]

@@ -56,40 +56,39 @@ const Profile: React.FC = () => {
                     <Text fontSize="2xl" mb={4}>
                         My Profile:
                     </Text>
-                    <Card>
-                        {user && (
-                            <Flex alignItems="center">
-                                <Flex alignItems="center" mr="2">
-                                    <Avatar name={user.name} src={user.avatar} size="md" />
-                                    <Flex direction="column" alignItems="flex-start" ml="1">
-                                        <Text noOfLines={1} fontWeight="bold">
-                                            {user.name}
-                                        </Text>
-                                        <Text fontSize="sm" color="gray.500" noOfLines={1}>
-                                            {user.role}
-                                        </Text>
-                                    </Flex>
+                    {user && (
+                        <Flex alignItems="center">
+                            <Flex alignItems="center" mr="2">
+                                <Avatar name={user.name} src={user.avatar} size="md" />
+                                <Flex direction="column" alignItems="flex-start" ml="1">
+                                    <Text noOfLines={1} fontWeight="bold">
+                                        {user.name}
+                                    </Text>
+                                    <Text fontSize="sm" color="gray.500" noOfLines={1}>
+                                        {user.role}
+                                    </Text>
                                 </Flex>
                             </Flex>
-                        )}
+                        </Flex>
+                    )}
 
-                        {user && (
-                            <Box mt={4}>
-                                <Stack spacing={2} direction="row" align="center">
-                                    <Text>Email: {user.email}</Text>
-                                </Stack>
-                                <Stack spacing={2} direction="row" align="center">
-                                    <Text>Phone: {user.tel}</Text>
-                                </Stack>
-                                <Stack spacing={2} direction="row" align="center">
-                                    <Text>Location: {user.location}</Text>
-                                </Stack>
-                                <Stack spacing={2} direction="row" align="center">
-                                    <Text>Joined: {user.createdAt}</Text>
-                                </Stack>
-                            </Box>
-                        )}
-                    </Card>
+                    {user && (
+                        <Box mt={4}>
+                            <Stack spacing={2} direction="row" align="center">
+                                <Text>Email: {user.email}</Text>
+                            </Stack>
+                            <Stack spacing={2} direction="row" align="center">
+                                <Text>Phone: {user.tel}</Text>
+                            </Stack>
+                            <Stack spacing={2} direction="row" align="center">
+                                <Text>Location: {user.location}</Text>
+                            </Stack>
+                            <Stack spacing={2} direction="row" align="center">
+                                <Text>Joined: {user.createdAt}</Text>
+                            </Stack>
+                        </Box>
+                    )}
+
                     <HStack>
                         <Link as={RouterLink} to="/settings">
                             <Button colorScheme="blue" mt={6}>

@@ -4,7 +4,7 @@ import React from "react";
 
 const Calendar: React.FC = () => {
     const calendarEmbedCode = {
-        __html: '<iframe src="https://calendar.google.com/calendar/embed?src=en.uk%23holiday%40group.v.calendar.google.com&ctz=Europe%2FBerlin" style="border: 0" width="100%" height="650" frameborder="0" scrolling="no"></iframe>',
+        __html: '<iframe src="https://calendar.google.com/calendar/embed?height=650&wkst=2&bgcolor=%23ffffff&ctz=UTC&showTitle=0&showTabs=0&showPrint=0&showTz=0&showCalendars=0&showDate=0&showNav=0&src=ZW4uZ2VybWFuI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5" style="border-width:0" width="100%" height="650" frameborder="0" scrolling="no"></iframe>',
     };
 
     return (

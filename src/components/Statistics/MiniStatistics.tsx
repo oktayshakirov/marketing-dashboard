@@ -1,24 +1,25 @@
 import Card from "@/components/Card";
-import { Box, Flex, Stat, StatHelpText, StatLabel, StatNumber, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Stat, StatHelpText, StatLabel, StatNumber } from "@chakra-ui/react";
 import { useClient } from "@contexts/useClientContext";
 import React, { cloneElement, useEffect, useState } from "react";
+import CountUp from "react-countup";
 
 type StatisticsData = {
     title: string;
-    amount: string;
+    amount: number;
     percentage: number;
 };
 
 interface MiniStatisticsProps {
     keyName: string;
     icon: JSX.Element;
+    prefix?: string;
+    suffix?: string;
 }
 
-const MiniStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
-    const [data, setData] = useState<StatisticsData>({ title: "", amount: "", percentage: 0 });
+const MiniStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon, prefix, suffix }) => {
+    const [data, setData] = useState<StatisticsData>({ title: "", amount: 0, percentage: 0 });
     const { selectedClient } = useClient();
-    const iconTeal = useColorModeValue("#51F2BF", "#51F2BF");
-    const textColor = useColorModeValue("gray.700", "white");
 
     useEffect(() => {
         if (selectedClient) {
@@ -34,7 +35,13 @@ const MiniStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
         }
     }, [keyName, selectedClient]);
 
-    const iconWithSize = cloneElement(icon, { h: "24px", w: "24px" });
+    const iconWithSize = cloneElement(icon, { h: "30px", w: "30px" });
+
+    const getDecimalCount = (num: number): number => {
+        const str = "" + num;
+        const index = str.indexOf(".");
+        return index >= 0 ? str.length - index - 1 : 0;
+    };
 
     return (
         <Card width={{ base: "100%", md: "23%" }}>
@@ -44,8 +51,10 @@ const MiniStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
                         {data.title}
                     </StatLabel>
                     <Flex>
-                        <StatNumber fontSize="lg" color={textColor}>
-                            {data.amount}
+                        <StatNumber fontSize="lg" color={"gray.700"}>
+                            {prefix}
+                            <CountUp start={0} end={data.amount} decimals={getDecimalCount(data.amount)} decimal="." />
+                            {suffix}
                         </StatNumber>
                         <StatHelpText
                             m="1px"
@@ -59,9 +68,9 @@ const MiniStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
                     </Flex>
                 </Stat>
                 <Box
-                    h={"45px"}
-                    w={"45px"}
-                    bg={iconTeal}
+                    h={"50px"}
+                    w={"50px"}
+                    bg={"blackAlpha.100"}
                     borderRadius="lg"
                     display="flex"
                     alignItems="center"

@@ -3,42 +3,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "108",
+                "amount": 108,
                 "percentage": 5
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$13.32",
+                "amount": 13.32,
                 "percentage": -3
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$1,020",
+                "amount": 1020,
                 "percentage": 23
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "9",
+                "amount": 9,
                 "percentage": 1
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "95,512",
+                "amount": 95512,
                 "percentage": 23
             },
             "reach": {
                 "title": "Reach",
-                "amount": "37,532",
+                "amount": 37532,
                 "percentage": -12
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "2,234",
+                "amount": 2234,
                 "percentage": 2
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "6.25%",
+                "amount": 6.25,
                 "percentage": 2
             }
         }
@@ -47,42 +47,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "150",
+                "amount": 150,
                 "percentage": 10
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$10.75",
+                "amount": 10.75,
                 "percentage": 1
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$1,500",
+                "amount": 1500,
                 "percentage": 15
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "15",
+                "amount": 15,
                 "percentage": 3
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "120,000",
+                "amount": 120000,
                 "percentage": 18
             },
             "reach": {
                 "title": "Reach",
-                "amount": "45,000",
+                "amount": 45000,
                 "percentage": -8
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "3,000",
+                "amount": 3000,
                 "percentage": 5
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "7.50%",
+                "amount": 7.5,
                 "percentage": 3
             }
         }
@@ -96,37 +96,37 @@
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$12.50",
+                "amount": 12.54,
                 "percentage": -2
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$800",
+                "amount": 800,
                 "percentage": 10
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "7",
+                "amount": 7,
                 "percentage": 0
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "85,000",
+                "amount": 85040,
                 "percentage": 20
             },
             "reach": {
                 "title": "Reach",
-                "amount": "30,000",
+                "amount": 30300,
                 "percentage": -5
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "1,800",
+                "amount": 1800,
                 "percentage": 1
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "5.75%",
+                "amount": 5.75,
                 "percentage": -1
             }
         }
@@ -135,42 +135,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "120",
+                "amount": 120,
                 "percentage": 6
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$15.00",
+                "amount": 15,
                 "percentage": 2
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$1,200",
+                "amount": 1200,
                 "percentage": 12
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "10",
+                "amount": 10,
                 "percentage": 2
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "100,000",
+                "amount": 100000,
                 "percentage": 15
             },
             "reach": {
                 "title": "Reach",
-                "amount": "40,000",
+                "amount": 40000,
                 "percentage": -7
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "2,500",
+                "amount": 2500,
                 "percentage": 3
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "6.00%",
+                "amount": 6,
                 "percentage": 1
             }
         }
@@ -179,42 +179,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "110",
+                "amount": 110,
                 "percentage": 3
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$11.00",
+                "amount": 11,
                 "percentage": -1
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$950",
+                "amount": 950,
                 "percentage": 8
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "6",
+                "amount": 6,
                 "percentage": -2
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "70,000",
+                "amount": 70000,
                 "percentage": 10
             },
             "reach": {
                 "title": "Reach",
-                "amount": "25,000",
+                "amount": 25240,
                 "percentage": -10
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "1,500",
+                "amount": 1500,
                 "percentage": -1
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "4.50%",
+                "amount": 4.5,
                 "percentage": -2
             }
         }
@@ -223,42 +223,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "120",
+                "amount": 120,
                 "percentage": 3
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$12.00",
+                "amount": 12,
                 "percentage": -1
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$1950",
+                "amount": 1950,
                 "percentage": 8
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "6",
+                "amount": 6,
                 "percentage": -2
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "70,000",
+                "amount": 70000,
                 "percentage": 10
             },
             "reach": {
                 "title": "Reach",
-                "amount": "125,000",
+                "amount": 125000,
                 "percentage": -10
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "1,500",
+                "amount": 1500,
                 "percentage": -1
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "4.50%",
+                "amount": 4.5,
                 "percentage": -2
             }
         }
@@ -267,42 +267,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "110",
+                "amount": 110,
                 "percentage": 3
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$11.00",
+                "amount": 11,
                 "percentage": -1
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$1950",
+                "amount": 1950,
                 "percentage": 8
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "6",
+                "amount": 6,
                 "percentage": -2
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "70,000",
+                "amount": 70000,
                 "percentage": 10
             },
             "reach": {
                 "title": "Reach",
-                "amount": "25,000",
+                "amount": 65000,
                 "percentage": -10
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "11,500",
+                "amount": 11500,
                 "percentage": -1
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "4.50%",
+                "amount": 4.5,
                 "percentage": -2
             }
         }
@@ -311,42 +311,42 @@
         "statistics": {
             "leads": {
                 "title": "Leads All",
-                "amount": "110",
+                "amount": 110,
                 "percentage": 3
             },
             "costLead": {
                 "title": "Cost Per Lead",
-                "amount": "$111.00",
+                "amount": 111,
                 "percentage": -1
             },
             "adSpend": {
                 "title": "Ad Spend",
-                "amount": "$950",
+                "amount": 950,
                 "percentage": 8
             },
             "uniqueOutboundClicks": {
                 "title": "Unique Outbound Clicks",
-                "amount": "6",
+                "amount": 6,
                 "percentage": -2
             },
             "impressions": {
                 "title": "Impressions",
-                "amount": "10,000",
+                "amount": 10000,
                 "percentage": 10
             },
             "reach": {
                 "title": "Reach",
-                "amount": "25,000",
+                "amount": 29000,
                 "percentage": -10
             },
             "uniqueClicks": {
                 "title": "Unique Clicks",
-                "amount": "11,500",
+                "amount": 11500,
                 "percentage": -1
             },
             "uniqueCTR": {
                 "title": "Unique CTR",
-                "amount": "4.50%",
+                "amount": 4.5,
                 "percentage": -2
             }
         }

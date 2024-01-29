@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import { Box, Flex, Stat, StatLabel, StatNumber, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Stat, StatLabel, StatNumber } from "@chakra-ui/react";
 import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useState } from "react";
 
@@ -24,8 +24,6 @@ interface MiniStatisticsProps {
 const CampaignStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) => {
     const [data, setData] = useState<StatisticsData>({ title: "", amount: "" });
     const { selectedClient } = useClient();
-    const iconTeal = useColorModeValue("#51F2BF", "#51F2BF");
-    const textColor = useColorModeValue("gray.700", "white");
 
     useEffect(() => {
         if (selectedClient && selectedClient.id) {
@@ -42,7 +40,7 @@ const CampaignStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) =>
         }
     }, [keyName, selectedClient]);
 
-    const iconWithSize = React.cloneElement(icon, { h: "24px", w: "24px" });
+    const iconWithSize = React.cloneElement(icon, { h: "30px", w: "30px" });
 
     return (
         <Card width={{ base: "100%", md: "23%" }}>
@@ -51,14 +49,14 @@ const CampaignStatistics: React.FC<MiniStatisticsProps> = ({ keyName, icon }) =>
                     <StatLabel fontSize="sm" color="gray.400" fontWeight="bold" pb=".1rem">
                         {data.title}
                     </StatLabel>
-                    <StatNumber fontSize="lg" color={textColor}>
+                    <StatNumber fontSize="lg" color={"gray.700"}>
                         {data.amount}
                     </StatNumber>
                 </Stat>
                 <Box
-                    h={"45px"}
-                    w={"45px"}
-                    bg={iconTeal}
+                    h={"50px"}
+                    w={"50px"}
+                    bg={"blackAlpha.100"}
                     borderRadius="lg"
                     display="flex"
                     alignItems="center"

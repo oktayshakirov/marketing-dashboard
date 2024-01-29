@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import { Box, Flex, FormLabel, Heading, Input } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useState } from "react";
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
@@ -19,8 +19,6 @@ const SimpleLineChart: React.FC<LineChartProps> = ({ keyName, lineDataKey }) => 
     const [title, setTitle] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [selectedStartDate, setSelectedStartDate] = useState<string | null>(null);
-    const [selectedEndDate, setSelectedEndDate] = useState<string | null>(null);
 
     const { selectedClient } = useClient();
 
@@ -52,23 +50,8 @@ const SimpleLineChart: React.FC<LineChartProps> = ({ keyName, lineDataKey }) => 
         }
     }, [selectedClient, keyName, lineDataKey]);
 
-    const handleStartDateChange = (date: string) => {
-        setSelectedStartDate(date);
-    };
-
-    const handleEndDateChange = (date: string) => {
-        setSelectedEndDate(date);
-    };
-
+    // Todo: Filtering by Date Range Logic
     const filterDataByDateRange = () => {
-        if (selectedStartDate && selectedEndDate) {
-            const filteredData = data.filter(
-                (item) =>
-                    new Date(item.name) >= new Date(selectedStartDate) &&
-                    new Date(item.name) <= new Date(selectedEndDate),
-            );
-            return filteredData;
-        }
         return data;
     };
 
@@ -78,34 +61,6 @@ const SimpleLineChart: React.FC<LineChartProps> = ({ keyName, lineDataKey }) => 
                 <Heading as="h3" size="md">
                     {title}
                 </Heading>
-            </Box>
-            <Box mb="5" display="flex" justifyContent="center">
-                <Flex>
-                    <FormLabel htmlFor="startDate" style={{ fontSize: "19px" }}>
-                        Start:
-                    </FormLabel>
-                    <Input
-                        type="date"
-                        id="startDate"
-                        onChange={(e) => handleStartDateChange(e.target.value)}
-                        value={selectedStartDate || ""}
-                        style={{ border: "1px solid #ccc", borderRadius: "4px" }}
-                        size="sm"
-                    />
-                </Flex>
-                <Flex>
-                    <FormLabel htmlFor="endDate" style={{ marginLeft: "10px", fontSize: "19px" }}>
-                        End:
-                    </FormLabel>
-                    <Input
-                        type="date"
-                        id="endDate"
-                        onChange={(e) => handleEndDateChange(e.target.value)}
-                        value={selectedEndDate || ""}
-                        style={{ border: "1px solid #ccc", borderRadius: "4px" }}
-                        size="sm"
-                    />
-                </Flex>
             </Box>
             <ResponsiveContainer width="100%" height={300}>
                 <LineChart data={filterDataByDateRange()} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>

@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import { Box, Flex, FormLabel, Heading, Input } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 import { useClient } from "@contexts/useClientContext";
 import React, { useEffect, useState } from "react";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
@@ -13,7 +13,7 @@ interface ChartDataSet {
     title: string;
     labels: string[];
     data: number[];
-    // data2: number[]; // Uncomment if you want a second data series
+    data2: number[]; // Uncomment if you want a second data series
 }
 
 interface AreaChartProps {
@@ -26,8 +26,6 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
     const [title, setTitle] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    const [selectedStartDate, setSelectedStartDate] = useState<string | null>(null);
-    const [selectedEndDate, setSelectedEndDate] = useState<string | null>(null);
 
     const { selectedClient } = useClient();
 
@@ -36,7 +34,7 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
             const transformedData = chartData.labels.map((label, index) => ({
                 name: label,
                 [areaDataKey]: chartData.data[index],
-                // data2: chartData.data2[index], // Uncomment if needed
+                data2: chartData.data2[index], // Uncomment if needed
             }));
             setData(transformedData);
         };
@@ -63,23 +61,8 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
         }
     }, [selectedClient, keyName, areaDataKey]);
 
-    const handleStartDateChange = (date: string) => {
-        setSelectedStartDate(date);
-    };
-
-    const handleEndDateChange = (date: string) => {
-        setSelectedEndDate(date);
-    };
-
+    // Todo: Filtering by Date Range Logic
     const filterDataByDateRange = () => {
-        if (selectedStartDate && selectedEndDate) {
-            const filteredData = data.filter(
-                (item) =>
-                    new Date(item.name) >= new Date(selectedStartDate) &&
-                    new Date(item.name) <= new Date(selectedEndDate),
-            );
-            return filteredData;
-        }
         return data;
     };
 
@@ -90,42 +73,14 @@ const SimpleAreaChart: React.FC<AreaChartProps> = ({ keyName, areaDataKey }) => 
                     {title}
                 </Heading>
             </Box>
-            <Box mb="5" display="flex" justifyContent="center">
-                <Flex>
-                    <FormLabel htmlFor="startDate" style={{ fontSize: "19px" }}>
-                        Start:
-                    </FormLabel>
-                    <Input
-                        type="date"
-                        id="startDate"
-                        onChange={(e) => handleStartDateChange(e.target.value)}
-                        value={selectedStartDate || ""}
-                        style={{ border: "1px solid #ccc", borderRadius: "4px" }}
-                        size="sm"
-                    />
-                </Flex>
-                <Flex>
-                    <FormLabel htmlFor="endDate" style={{ marginLeft: "10px", fontSize: "19px" }}>
-                        End:
-                    </FormLabel>
-                    <Input
-                        type="date"
-                        id="endDate"
-                        onChange={(e) => handleEndDateChange(e.target.value)}
-                        value={selectedEndDate || ""}
-                        style={{ border: "1px solid #ccc", borderRadius: "4px" }}
-                        size="sm"
-                    />
-                </Flex>
-            </Box>
             <ResponsiveContainer width="100%" height={300}>
                 <AreaChart data={filterDataByDateRange()} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
-                    <Area type="monotone" dataKey={areaDataKey} fill="#51F2BF" stroke="green" strokeWidth={3} />
-                    {/* <Area type="monotone" dataKey="data2" stroke="#82ca9d" fill="#82ca9d" /> */}
+                    <Area type="monotone" dataKey={areaDataKey} fill="#51F2BF" stroke="#82ca9d" strokeWidth={3} />
+                    <Area type="monotone" dataKey="data2" fill="#82ca9d" stroke="#82ca9d" strokeWidth={3} />
                 </AreaChart>
             </ResponsiveContainer>
         </Card>
