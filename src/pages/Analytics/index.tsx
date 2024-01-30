@@ -79,9 +79,9 @@ const Analytics: React.FC = () => {
             <MiniStatistics keyName="reach" icon={<Icon as={MdOutlineStackedBarChart} />} />
             <MiniStatistics keyName="uniqueClicks" icon={<Icon as={MdAdsClick} />} />
             <MiniStatistics keyName="uniqueCTR" icon={<Icon as={MdOutlineAddChart} />} suffix="%" />
-            <MapChart />
             <LineChart keyName="traffic" lineDataKey="data" />
             <AreaChart keyName="sales" areaDataKey="data" />
+            <MapChart />
             <BarChart keyName="leadsAge" barDataKey="data" />
             <BarChart keyName="leadsGender" barDataKey="data" />
         </Flex>

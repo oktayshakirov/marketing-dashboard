@@ -1,7 +1,7 @@
 import { Box, Flex, Heading, VStack } from "@chakra-ui/react";
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
 import { Bar, BarChart, Tooltip, XAxis, YAxis } from "recharts";
-import Map from "../../../public/fake/map.json";
+import Map from "../../contexts/WorldMap.json";
 import Card from "../Card";
 
 const MapChartWithBarChart = () => {
@@ -25,12 +25,27 @@ const MapChartWithBarChart = () => {
 
     return (
         <Card width={"95%"} overflow={"hidden"}>
-            <Flex height={400} width={"90%"} justifyContent={"center"} gap={35}>
+            <Flex height={400} width={"100%"} justifyContent={"center"} gap={35}>
                 <ComposableMap projection="geoMercator">
                     <Geographies geography={Map}>
                         {({ geographies }) =>
                             geographies.map((geo) => (
-                                <Geography key={geo.rsmKey} geography={geo} fill="#82ca9d" stroke="gray" />
+                                <Geography
+                                    key={geo.rsmKey}
+                                    geography={geo}
+                                    style={{
+                                        default: {
+                                            fill: "#82ca9d",
+                                        },
+                                        hover: {
+                                            fill: "white",
+                                        },
+                                        pressed: {
+                                            fill: "black",
+                                        },
+                                    }}
+                                    stroke="gray"
+                                />
                             ))
                         }
                     </Geographies>
@@ -40,14 +55,14 @@ const MapChartWithBarChart = () => {
                         </Marker>
                     ))}
                 </ComposableMap>
-                <Flex alignItems={"center"}>
+                <Flex width={"50%"} alignItems={"center"}>
                     <VStack>
                         <Box textAlign="center" mb="20px">
                             <Heading as="h3" size="md">
                                 Sales by Locations
                             </Heading>
                         </Box>
-                        <BarChart width={500} height={300} data={barChartData}>
+                        <BarChart width={550} height={300} data={barChartData}>
                             <XAxis dataKey="name" />
                             <YAxis />
                             <Tooltip />
