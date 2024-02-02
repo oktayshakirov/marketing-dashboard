@@ -90,13 +90,14 @@ const Sidebar: React.FC = () => {
                     <DrawerBody>
                         <VStack align="stretch" spacing="3">
                             <SidebarLink icon={<ViewIcon />} to="/" children="Overview" />
+                            <SidebarLink icon={<AttachmentIcon />} to="/summary" children="Summary" />
                             <SidebarLink icon={<SpinnerIcon />} to="/analytics" children="Analytics" />
                             <SidebarLink icon={<TimeIcon />} to="/campaigns" children="Campaigns" />
                             <SidebarLink icon={<AtSignIcon />} to="/users" children="Users" />
                             <SidebarLink icon={<ChatIcon />} to="/chat" children="Chat" />
                             <SidebarLink icon={<CalendarIcon />} to="/calendar" children="Calendar" />
                             <SidebarLink icon={<PhoneIcon />} to="/videocall" children="Videocall" />
-                            <SidebarLink icon={<AttachmentIcon />} to="/summary" children="Summary" />
+
                             <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                             <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
                             <SidebarLink icon={<ViewIcon />} to="/profile" children="Profile" />
@@ -123,13 +124,14 @@ const Sidebar: React.FC = () => {
                 </Link>
                 <VStack align="stretch" spacing="4">
                     <SidebarLink icon={<ViewIcon />} to="/" children="Overview" />
+                    <SidebarLink icon={<AttachmentIcon />} to="/summary" children="Summary" />
                     <SidebarLink icon={<SpinnerIcon />} to="/analytics" children="Analytics" />
                     <SidebarLink icon={<TimeIcon />} to="/campaigns" children="Campaigns" />
                     <SidebarLink icon={<AtSignIcon />} to="/users" children="Users" />
                     <SidebarLink icon={<ChatIcon />} to="/chat" children="Chat" />
                     <SidebarLink icon={<CalendarIcon />} to="/calendar" children="Calendar" />
                     <SidebarLink icon={<PhoneIcon />} to="/videocall" children="Videocall" />
-                    <SidebarLink icon={<AttachmentIcon />} to="/summary" children="Summary" />
+
                     <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                     <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
                     <SidebarLink icon={<ViewIcon />} to="/profile" children="Profile" />

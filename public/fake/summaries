@@ -1,0 +1,114 @@
+[
+    {
+        "id": "1",
+        "title": "Revolutionizing Healthcare - Bayer AskMed",
+        "description": "Bayer AskMed is at the forefront of healthcare innovation, blending technology and medicine to enhance patient care. As pioneers in the field, they are seeking a comprehensive marketing campaign to amplify their impact and communicate their commitment to cutting-edge medical solutions.",
+        "requirements": {
+            "budget": "$800,000",
+            "timeline": "4 months",
+            "designers": 3,
+            "programmers": 5,
+            "marketingSpecialists": 6,
+            "socialMediaPresence": "Strong",
+            "contentCreation": "High-quality"
+        }
+    },
+    {
+        "id": "2",
+        "title": "Tech Disruption - XYZ Inc",
+        "description": "XYZ Inc, an industry disruptor in tech, is on a mission to simplify complex processes through cutting-edge software, with a particular focus on AI applications. They aim to elevate their brand presence and require a strategic marketing approach to highlight their technological prowess and forward-thinking approach.",
+        "requirements": {
+            "budget": "$500,000",
+            "timeline": "3 months",
+            "designers": 2,
+            "programmers": 6,
+            "marketingSpecialists": 4,
+            "videoProduction": "Required",
+            "targetAudienceResearch": "In-depth"
+        }
+    },
+    {
+        "id": "3",
+        "title": "Electronics Innovation - 123 Retail",
+        "description": "123 Retail, a global leader in manufacturing cutting-edge electronics, seeks a marketing strategy to promote their latest product line and expand market share. They are committed to engaging and innovative campaigns that resonate with their tech-savvy audience.",
+        "requirements": {
+            "budget": "$1,200,000",
+            "timeline": "6 months",
+            "designers": 4,
+            "programmers": 7,
+            "marketingSpecialists": 8,
+            "socialMediaPresence": "Moderate",
+            "contentCreation": "Engaging"
+        }
+    },
+    {
+        "id": "4",
+        "title": "Empowering Education - Education Ltd",
+        "description": "Education Ltd, dedicated to providing innovative education solutions, needs a marketing campaign to introduce their products to a wider audience. The goal is to empower educators and students through informative and engaging content.",
+        "requirements": {
+            "budget": "$300,000",
+            "timeline": "2 months",
+            "designers": 1,
+            "programmers": 3,
+            "marketingSpecialists": 2,
+            "socialMediaPresence": "Basic",
+            "contentCreation": "Informative"
+        }
+    },
+    {
+        "id": "5",
+        "title": "Sustainable Living - Hurom Gmbh",
+        "description": "Hurom Gmbh, a company dedicated to promoting sustainable living practices, is launching a new product line. They need a marketing campaign to highlight the eco-friendly features and educate consumers on the benefits of choosing sustainable products.",
+        "requirements": {
+            "budget": "$1,500,000",
+            "timeline": "8 months",
+            "designers": 6,
+            "programmers": 10,
+            "marketingSpecialists": 12,
+            "socialMediaPresence": "High",
+            "contentCreation": "Compelling"
+        }
+    },
+    {
+        "id": "6",
+        "title": "Tech for Tomorrow - Tech Innovators",
+        "description": "Tech Innovators specializes in providing cutting-edge solutions for businesses. They require a marketing strategy to showcase their latest products and attract potential clients. With a preference for video production, they aim to present a dynamic and forward-thinking image.",
+        "requirements": {
+            "budget": "$700,000",
+            "timeline": "5 months",
+            "designers": 2,
+            "programmers": 4,
+            "marketingSpecialists": 5,
+            "socialMediaPresence": "Medium",
+            "contentCreation": "Educational"
+        }
+    },
+    {
+        "id": "7",
+        "title": "Green Solutions - Green Eco Solutions",
+        "description": "Green Eco Solutions specializes in providing eco-friendly solutions for businesses. They require a marketing strategy to showcase their latest products and attract potential clients. With a preference for video production, they aim to present a dynamic and forward-thinking image.",
+        "requirements": {
+            "budget": "$900,000",
+            "timeline": "4 months",
+            "designers": 3,
+            "programmers": 6,
+            "marketingSpecialists": 7,
+            "videoProduction": "Preferred",
+            "targetAudienceResearch": "Thorough"
+        }
+    },
+    {
+        "id": "8",
+        "title": "Logistics Excellence - Global Logistic Group",
+        "description": "Global Logistic Group is dedicated to promoting a healthy lifestyle. They need a marketing campaign to launch their new line of wellness products and reach a wider audience. With a strong social media presence, they aim to inspire and connect with their target market.",
+        "requirements": {
+            "budget": "$600,000",
+            "timeline": "3 months",
+            "designers": 2,
+            "programmers": 4,
+            "marketingSpecialists": 5,
+            "socialMediaPresence": "Strong",
+            "contentCreation": "Inspiring"
+        }
+    }
+]
