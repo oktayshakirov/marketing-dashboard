@@ -77,7 +77,11 @@ const Board: React.FC<BoardProps> = ({ columns, moveTask }) => {
                 marginBottom="0.5rem"
                 backgroundColor="white"
                 boxShadow={isDragging ? "0 4px 8px rgba(0, 0, 0, 0.2)" : "none"}
-                style={{ cursor: "move" }}
+                style={{
+                    cursor: "move",
+                    transition: "all 0.5s ease",
+                    transform: isDragging ? "scale(1.05)" : "none",
+                }}
             >
                 <Flex justify="space-between" alignItems="center" mb="2">
                     <Text fontWeight="bold">{text}</Text>

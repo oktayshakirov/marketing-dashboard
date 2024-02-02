@@ -27,10 +27,10 @@ const Chat: React.FC = () => {
                             active
                             unreadCnt={3}
                         >
-                            <Avatar src="\ogno.svg" name="Avatar" status="available" />
+                            <Avatar src="/avatars/vladi.png" name="Avatar" status="available" />
                         </Conversation>
                         <Conversation name="Darwin Wiranda" lastSenderName="Darwin" info="Hey there!">
-                            <Avatar src="\ogno.svg" name="Avatar" status="away" />
+                            <Avatar src="/avatars/darwin.png" name="Avatar" status="away" />
                         </Conversation>
                         <Conversation name="Design" lastSenderName="Vasilis" info="Hello " unreadCnt={2}>
                             <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
@@ -39,16 +39,16 @@ const Chat: React.FC = () => {
                             <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
                         </Conversation>
                         <Conversation name="Vasilis K." lastSenderName="Oktay" info="What's up?">
-                            <Avatar src="\ogno.svg" name="Avatar" status="dnd" />
+                            <Avatar src="/avatars/vasilis.png" name="Avatar" status="dnd" />
                         </Conversation>
                         <Conversation name="Alex K." lastSenderName="Alex" info="Good morning">
-                            <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
+                            <Avatar src="/avatars/alex.png" name="Avatar" status="invisible" />
                         </Conversation>
                         <Conversation name="Sophie" lastSenderName="Sophie" info="Hello">
                             <Avatar src="\ogno.svg" name="Avatar" status="invisible" />
                         </Conversation>
-                        <Conversation name="Client" lastSenderName="Oktay" info="Good morning">
-                            <Avatar src="\ogno.svg" name="Avatar" status="available" />
+                        <Conversation name="Bayer Team" lastSenderName="Oktay" info="Good morning">
+                            <Avatar src="/avatars/bayer.png" name="Avatar" status="available" />
                         </Conversation>
                     </ConversationList>
                 </Sidebar>

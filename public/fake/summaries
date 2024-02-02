@@ -6,6 +6,7 @@
         "requirements": {
             "budget": "$800,000",
             "timeline": "4 months",
+            "campaigns": 3,
             "designers": 3,
             "programmers": 5,
             "marketingSpecialists": 6,
@@ -20,6 +21,7 @@
         "requirements": {
             "budget": "$500,000",
             "timeline": "3 months",
+            "campaigns": 2,
             "designers": 2,
             "programmers": 6,
             "marketingSpecialists": 4,
@@ -34,6 +36,7 @@
         "requirements": {
             "budget": "$1,200,000",
             "timeline": "6 months",
+            "campaigns": 8,
             "designers": 4,
             "programmers": 7,
             "marketingSpecialists": 8,
@@ -48,6 +51,7 @@
         "requirements": {
             "budget": "$300,000",
             "timeline": "2 months",
+            "campaigns": 2,
             "designers": 1,
             "programmers": 3,
             "marketingSpecialists": 2,
@@ -62,6 +66,7 @@
         "requirements": {
             "budget": "$1,500,000",
             "timeline": "8 months",
+            "campaigns": 3,
             "designers": 6,
             "programmers": 10,
             "marketingSpecialists": 12,
@@ -76,6 +81,7 @@
         "requirements": {
             "budget": "$700,000",
             "timeline": "5 months",
+            "campaigns": 4,
             "designers": 2,
             "programmers": 4,
             "marketingSpecialists": 5,
@@ -90,6 +96,7 @@
         "requirements": {
             "budget": "$900,000",
             "timeline": "4 months",
+            "campaigns": 3,
             "designers": 3,
             "programmers": 6,
             "marketingSpecialists": 7,
@@ -104,6 +111,7 @@
         "requirements": {
             "budget": "$600,000",
             "timeline": "3 months",
+            "campaigns": 10,
             "designers": 2,
             "programmers": 4,
             "marketingSpecialists": 5,
