@@ -9,6 +9,7 @@ import Calendar from "./Calendar";
 import Campaigns from "./Campaigns";
 import Chat from "./Chat";
 import Files from "./Files";
+import { default as Login, default as Logout } from "./Login";
 import MainLayout from "./MainLayout";
 import Overview from "./Overview";
 import Profile from "./Profile";
@@ -77,12 +78,21 @@ const App: React.FC = () => {
                     path: "videocall",
                     element: <Videocall />,
                 },
+                {
+                    path: "login",
+                    element: <Login />,
+                },
+                {
+                    path: "/logout",
+                    Component: Logout,
+                    errorElement: <ErrorBoundary />,
+                },
             ],
         },
     ]);
     return (
         <ClientProvider>
-            <RouterProvider router={router} fallbackElement={<FullscreenLoader />} />;
+            <RouterProvider router={router} fallbackElement={<FullscreenLoader />} />
         </ClientProvider>
     );
 };

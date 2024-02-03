@@ -97,7 +97,6 @@ const Sidebar: React.FC = () => {
                             <SidebarLink icon={<ChatIcon />} to="/chat" children="Chat" />
                             <SidebarLink icon={<CalendarIcon />} to="/calendar" children="Calendar" />
                             <SidebarLink icon={<PhoneIcon />} to="/videocall" children="Videocall" />
-
                             <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                             <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
                             <SidebarLink icon={<ViewIcon />} to="/profile" children="Profile" />
@@ -131,7 +130,6 @@ const Sidebar: React.FC = () => {
                     <SidebarLink icon={<ChatIcon />} to="/chat" children="Chat" />
                     <SidebarLink icon={<CalendarIcon />} to="/calendar" children="Calendar" />
                     <SidebarLink icon={<PhoneIcon />} to="/videocall" children="Videocall" />
-
                     <SidebarLink icon={<ViewIcon />} to="/board" children="Board" />
                     <SidebarLink icon={<AttachmentIcon />} to="/files" children="Files" />
                     <SidebarLink icon={<ViewIcon />} to="/profile" children="Profile" />
