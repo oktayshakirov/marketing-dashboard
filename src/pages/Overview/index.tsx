@@ -43,30 +43,30 @@ const Overview = () => {
                 {/* Placeholder for Client Images */}
                 <HStack spacing="4">
                     {/* Adjust spacing as needed */}
-                    <Image src="https://via.placeholder.com/250" alt="Client Logo" />
-                    <Image src="https://via.placeholder.com/250" alt="Client Logo" />
-                    <Image src="https://via.placeholder.com/250" alt="Client Logo" />
+                    <Image src="./placeholder.png" width={250} alt="Client Logo" />
+                    <Image src="./placeholder.png" width={250} alt="Client Logo" />
+                    <Image src="./placeholder.png" width={250} alt="Client Logo" />
                 </HStack>
 
                 {/* Social Media and Website Links */}
                 <HStack spacing={3}>
-                    <Button leftIcon={<FaGlobe />} colorScheme="blue">
+                    <Button leftIcon={<FaGlobe />} colorScheme="green">
                         Website
                     </Button>
-                    <Button leftIcon={<FaFacebook />} colorScheme="facebook">
+                    <Button leftIcon={<FaFacebook />} colorScheme="blue">
                         Facebook
-                    </Button>
-                    <Button leftIcon={<FaTwitter />} colorScheme="twitter">
-                        Twitter
                     </Button>
                     <Button leftIcon={<FaInstagram />} colorScheme="pink">
                         Instagram
                     </Button>
-                    <Button leftIcon={<FaLinkedin />} colorScheme="linkedin">
+                    <Button leftIcon={<FaLinkedin />} colorScheme="blue">
                         LinkedIn
                     </Button>
                     <Button leftIcon={<FaYoutube />} colorScheme="red">
                         YouTube
+                    </Button>
+                    <Button leftIcon={<FaTwitter />} colorScheme="blue">
+                        Twitter
                     </Button>
                 </HStack>
             </VStack>
