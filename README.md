@@ -1,6 +1,6 @@
 ## Demo
 
-![Desktop Demo](https://oktayshakirov.com/assets/images/projects/ogno-dashboard.png 'Desktop Demo')
+![Desktop Demo](https://oktayshakirov.com/assets/images/projects/ogno-dashboard.webp 'Desktop Demo')
 
 <p align="center">
   <a href="https://ogno.netlify.app/"><strong>➥ Live Demo</strong></a>
